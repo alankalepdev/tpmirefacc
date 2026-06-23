@@ -269,7 +269,7 @@ require_once 'config.php';
 
 </head>
 
-<body class="home page template-slider style-simple button-custom layout-full-width if-zoom if-border-hide no-content-padding hide-love no-shadows header-split header-fw sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders mobile-tb-center mobile-side-slide mobile-mini-mr-ll tr-menu">
+<body class="home page template-slider style-simple button-custom layout-full-width if-zoom if-border-hide no-content-padding hide-love no-shadows header-split header-fw sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders mobile-tb-center mobile-side-slide mobile-mini-mr-ll tr-menu header-fixed">
     
     <!-- Progress bar scroll indicator -->
     <div class="scroll-progress"></div>
@@ -350,6 +350,15 @@ require_once 'config.php';
         <?php include 'includes/footer.php'; ?>
 
     </div>
+
+    <div id="Side_slide" class="right dark" data-width="250">
+        <div class="close-wrapper"><a href="#" class="close"><i class="icon-cancel-fine"></i></a></div>
+        <div class="menu_wrapper"></div>
+        <div class="extras">
+            <div class="extras-wrapper"></div>
+        </div>
+    </div>
+    <div id="body_overlay"></div>
 
     <!-- JS -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -463,10 +472,17 @@ require_once 'config.php';
             // 2. MENU SMOOTH SCROLL
             // ========================================
             $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if(target.length) {
+                const href = this.getAttribute('href');
+
+                // Ignorar el toggle del menu responsive y enlaces vacios (#)
+                if (!href || href === '#' || $(this).hasClass('responsive-menu-toggle')) {
+                    return;
+                }
+
+                const target = $(href);
+                if (target.length) {
                     event.preventDefault();
-                    
+
                     // Smooth scroll nativo
                     const targetPosition = target.offset().top - 100;
                     $('html, body').animate({
