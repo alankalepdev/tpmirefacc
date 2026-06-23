@@ -1,0 +1,330 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║           📁 ÍNDICE DE ARCHIVOS DEL PROYECTO                  ║
+║              TPMI REFACCIONES - SITIO ONEPAGE                 ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════
+🔥 ARCHIVOS PRINCIPALES (NECESARIOS PARA EL SITIO)
+═══════════════════════════════════════════════════════════════
+
+📄 index.php
+   → Página principal del sitio OnePage
+   → Incluye todas las secciones
+   → Configura el slider Revolution
+   → Implementa smooth scroll
+   🎯 ACCIÓN: Subir a cPanel
+
+📄 config.php
+   → Configuración global del sitio
+   → Datos de contacto
+   → Redes sociales
+   → Configuración de email
+   🎯 ACCIÓN: Editar con tu información y subir
+
+📄 send-email.php
+   → Procesa el formulario de contacto
+   → Valida y sanitiza datos
+   → Envía emails
+   → Guarda log de contactos
+   🎯 ACCIÓN: Subir a cPanel (ya configurado)
+
+📄 .htaccess
+   → Configuración de Apache
+   → Seguridad y protección de archivos
+   → Redirecciones
+   → Compresión y cache
+   🎯 ACCIÓN: Subir a cPanel
+
+📄 test-server.php
+   → Verifica la configuración del servidor
+   → Muestra errores y warnings
+   → Valida archivos necesarios
+   ⚠️ ACCIÓN: Subir, ejecutar, LUEGO ELIMINAR
+
+═══════════════════════════════════════════════════════════════
+📂 CARPETA INCLUDES/ (SECCIONES DEL SITIO)
+═══════════════════════════════════════════════════════════════
+
+📄 includes/section-home.php
+   → Hero section con slider Revolution
+   → Título principal y CTA
+   → Animaciones del slider
+   🎯 PERSONALIZAR: Textos del slider
+
+📄 includes/section-about.php
+   → Sección "Nosotros"
+   → Historia de la empresa
+   → Valores y estadísticas
+   🎯 PERSONALIZAR: Tu historia y números reales
+
+📄 includes/section-services.php
+   → Productos y servicios
+   → Industrias que atiendes
+   → Servicios especializados
+   🎯 PERSONALIZAR: Con info del PDF triptico_final.pdf
+
+📄 includes/section-contact.php
+   → Formulario de contacto
+   → Información de contacto
+   → CTA de WhatsApp
+   🎯 VERIFICAR: Que el email esté correcto
+
+📄 includes/footer.php
+   → Pie de página
+   → Copyright
+   → Redes sociales
+   🎯 OPCIONAL: Agregar info adicional
+
+═══════════════════════════════════════════════════════════════
+📂 CARPETA ASSETS/ (YA EXISTENTE)
+═══════════════════════════════════════════════════════════════
+
+📁 assets/css/
+   → Estilos del sitio
+   → Ya configurados, no modificar a menos que necesites
+
+📁 assets/images/
+   → Imágenes del sitio
+   🎯 REEMPLAZAR: Logo, slider, fotos de productos
+
+📁 assets/js/
+   → JavaScript y jQuery
+   → Ya configurados
+
+📁 assets/plugins/
+   → Revolution Slider
+   → Plugins del tema
+   → Ya configurados
+
+═══════════════════════════════════════════════════════════════
+📚 DOCUMENTACIÓN (PARA TI - NO SUBIR)
+═══════════════════════════════════════════════════════════════
+
+📄 README.md
+   → Documentación técnica completa
+   → Requisitos del servidor
+   → Instrucciones de instalación
+   → Solución de problemas
+   💡 LEER: Antes de empezar
+
+📄 DESPLIEGUE-CPANEL.txt
+   → Guía paso a paso para subir a cPanel
+   → Configuración de email
+   → Permisos de archivos
+   💡 SEGUIR: Al subir el sitio
+
+📄 RESUMEN.txt
+   → Resumen ejecutivo del proyecto
+   → Características implementadas
+   → Próximos pasos
+   💡 LEER: Para entender el proyecto completo
+
+📄 GUIA-USAR-PDF.txt
+   → Cómo usar el triptico_final.pdf
+   → Dónde poner cada información
+   → Ejemplos prácticos
+   💡 USAR: Para personalizar el contenido
+
+📄 CHECKLIST-PRE-LANZAMIENTO.txt
+   → Lista de verificación completa
+   → Qué revisar antes de lanzar
+   → Mantenimiento post-lanzamiento
+   💡 MARCAR: Cada item antes de publicar
+
+📄 INDICE-ARCHIVOS.txt
+   → Este archivo
+   → Explica qué es cada archivo
+   💡 REFERENCIA: Cuando tengas dudas
+
+═══════════════════════════════════════════════════════════════
+🗑️ ARCHIVOS ANTIGUOS (NO NECESARIOS - PUEDES ELIMINAR)
+═══════════════════════════════════════════════════════════════
+
+❌ about.html
+   → Página antigua (ahora es section-about.php)
+   → NO subir a cPanel
+
+❌ contact.html
+   → Página antigua (ahora es section-contact.php)
+   → NO subir a cPanel
+
+❌ services.html
+   → Página antigua (ahora es section-services.php)
+   → NO subir a cPanel
+
+❌ press.html
+   → Página antigua (no incluida en el nuevo sitio)
+   → NO subir a cPanel
+
+❌ post.html
+   → Página antigua (no incluida en el nuevo sitio)
+   → NO subir a cPanel
+
+❌ index.html
+   → Página antigua (ahora es index.php)
+   → NO subir a cPanel
+
+═══════════════════════════════════════════════════════════════
+📦 RESUMEN: QUÉ SUBIR A CPANEL
+═══════════════════════════════════════════════════════════════
+
+✅ SUBIR ESTOS:
+   • index.php
+   • config.php (editado con tu info)
+   • send-email.php
+   • .htaccess
+   • test-server.php (temporal)
+   • includes/ (toda la carpeta)
+   • assets/ (toda la carpeta)
+
+❌ NO SUBIR ESTOS:
+   • README.md
+   • DESPLIEGUE-CPANEL.txt
+   • RESUMEN.txt
+   • GUIA-USAR-PDF.txt
+   • CHECKLIST-PRE-LANZAMIENTO.txt
+   • INDICE-ARCHIVOS.txt
+   • about.html
+   • contact.html
+   • services.html
+   • press.html
+   • post.html
+   • index.html
+
+═══════════════════════════════════════════════════════════════
+🔄 FLUJO DE TRABAJO RECOMENDADO
+═══════════════════════════════════════════════════════════════
+
+PASO 1: PREPARACIÓN LOCAL
+└─ Edita config.php con tu información
+└─ Lee el PDF triptico_final.pdf
+└─ Toma notas de lo que vas a cambiar
+
+PASO 2: PERSONALIZACIÓN
+└─ Edita includes/section-about.php con tu historia
+└─ Edita includes/section-services.php con tus productos
+└─ Reemplaza imágenes en assets/images/
+└─ Sube tu logo
+
+PASO 3: SUBIR A CPANEL
+└─ Sigue DESPLIEGUE-CPANEL.txt paso a paso
+└─ Sube solo los archivos necesarios (ver lista arriba)
+└─ Configura permisos correctos
+
+PASO 4: VERIFICACIÓN
+└─ Ejecuta test-server.php
+└─ Verifica que todo esté OK
+└─ ELIMINA test-server.php
+
+PASO 5: PRUEBAS
+└─ Navega por el sitio completo
+└─ Prueba el formulario
+└─ Verifica en móvil
+└─ Usa CHECKLIST-PRE-LANZAMIENTO.txt
+
+PASO 6: LANZAMIENTO
+└─ Anuncia en redes sociales
+└─ Actualiza perfiles con el nuevo link
+└─ Monitorea el formulario de contacto
+
+═══════════════════════════════════════════════════════════════
+🆘 AYUDA RÁPIDA
+═══════════════════════════════════════════════════════════════
+
+¿Cómo subo el sitio a cPanel?
+→ Lee: DESPLIEGUE-CPANEL.txt
+
+¿Cómo personalizo el contenido?
+→ Lee: GUIA-USAR-PDF.txt
+
+¿Qué revisar antes de lanzar?
+→ Lee: CHECKLIST-PRE-LANZAMIENTO.txt
+
+¿El formulario no funciona?
+→ Lee: README.md sección "Solución de Problemas"
+
+¿Cómo cambio textos/imágenes?
+→ Edita los archivos en includes/
+→ Reemplaza imágenes en assets/images/
+
+¿Necesito modificar CSS?
+→ No debería ser necesario
+→ Si es necesario, edita assets/css/custom.css
+
+═══════════════════════════════════════════════════════════════
+📞 INFORMACIÓN DEL PROYECTO
+═══════════════════════════════════════════════════════════════
+
+Nombre: TPMI Refacciones - Sitio Web OnePage
+Tipo: Sitio corporativo OnePage responsive
+Tecnología: PHP + HTML5 + CSS3 + JavaScript
+Framework: BeTheme Industry2
+Secciones: Home, About, Services, Contact
+Características: Formulario funcional, WhatsApp, Slider
+Desarrollador: Alan Kalep Dev
+Fecha: Junio 2026
+Versión: 1.0
+
+═══════════════════════════════════════════════════════════════
+📊 ESTADÍSTICAS DEL PROYECTO
+═══════════════════════════════════════════════════════════════
+
+Archivos PHP creados: 8
+Archivos de documentación: 6
+Secciones del sitio: 4
+Tiempo estimado de personalización: 2-4 horas
+Tiempo de subida a cPanel: 30-60 minutos
+Líneas de código: ~2,500
+
+═══════════════════════════════════════════════════════════════
+✨ PRÓXIMAS MEJORAS SUGERIDAS
+═══════════════════════════════════════════════════════════════
+
+Fase 2 (futuro):
+• Sección de marcas con logos
+• Galería de productos con lightbox
+• Testimonios de clientes
+• Blog de noticias/artículos
+• Descarga de catálogo en PDF
+• Sistema de cotización online
+• Integración con CRM
+• Chat en vivo
+• Multi-idioma (inglés)
+• Google Maps integrado
+
+═══════════════════════════════════════════════════════════════
+
+🎯 OBJETIVO: Tener tu sitio online en menos de 1 día
+
+Tiempo estimado total:
+• Lectura de documentación: 1 hora
+• Personalización de contenido: 2-3 horas
+• Subida a cPanel: 30 min
+• Pruebas y ajustes: 1 hora
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOTAL: 4-6 horas
+
+═══════════════════════════════════════════════════════════════
+
+¿Tienes dudas? Revisa primero estos archivos en orden:
+
+1. RESUMEN.txt (entender el proyecto)
+2. README.md (documentación técnica)
+3. DESPLIEGUE-CPANEL.txt (cómo subir)
+4. GUIA-USAR-PDF.txt (cómo personalizar)
+5. CHECKLIST-PRE-LANZAMIENTO.txt (antes de lanzar)
+
+═══════════════════════════════════════════════════════════════
+
+🎊 ¡Todo listo para comenzar!
+
+Siguiente paso: Abre RESUMEN.txt para una vista general
+
+═══════════════════════════════════════════════════════════════
+
+Creado: Junio 2026
+Actualizado: Junio 2026
+
+═══════════════════════════════════════════════════════════════

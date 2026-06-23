@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Hover Servicios</title>
+    
+    <!-- CSS Theme -->
+    <link rel='stylesheet' href='assets/css/global.css'>
+    <link rel='stylesheet' href='assets/css/structure.css'>
+    <link rel='stylesheet' href='assets/css/industry2.css'>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background: #1014f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Copiando EXACTAMENTE la estructura del tema */
+        .column_attr {
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .column_attr.align_center {
+            text-align: center;
+        }
+        
+        /* Transiciones de iconos */
+        .icon-tools-2, .icon-wrench, .icon-graduation, .icon-clock {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        /* Hover genérico que cambia a amarillo */
+        .column_attr:hover .icon-tools-2,
+        .column_attr:hover .icon-wrench,
+        .column_attr:hover .icon-graduation,
+        .column_attr:hover .icon-clock {
+            transform: scale(1.2) rotateY(360deg);
+            color: #ffd769 !important;
+        }
+        
+        /* Hover específico para iconos AMARILLOS que cambia a BLANCO */
+        .column_attr:hover .icon-tools-2[style*="color:#ffd769"],
+        .column_attr:hover .icon-wrench[style*="color:#ffd769"],
+        .column_attr:hover .icon-graduation[style*="color:#ffd769"],
+        .column_attr:hover .icon-clock[style*="color:#ffd769"] {
+            color: #ffffff !important;
+            transform: scale(1.2) rotateY(360deg);
+        }
+        
+        .status-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            color: white;
+        }
+        
+        .status-info h2 {
+            color: #ffd769;
+            margin-top: 0;
+        }
+        
+        .debug-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #10b981;
+        }
+        
+        @media (max-width: 968px) {
+            .test-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 568px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Debug - Hover en Servicios Especializados</h1>
+    
+    <div class="status-info">
+        <h2>📋 Configuración CSS Aplicada:</h2>
+        <ul>
+            <li><strong>Transición:</strong> all 0.3s ease</li>
+            <li><strong>Hover genérico:</strong> color: #ffd769 (amarillo) + scale(1.2) + rotateY(360deg)</li>
+            <li><strong>Hover específico:</strong> Para iconos con style="color:#ffd769" → color: #ffffff (blanco)</li>
+        </ul>
+        
+        <div class="debug-box">
+            <strong>🎯 Selector específico usado:</strong><br>
+            .column_attr:hover .icon-tools-2[style*="color:#ffd769"]<br>
+            .column_attr:hover .icon-wrench[style*="color:#ffd769"]<br>
+            .column_attr:hover .icon-graduation[style*="color:#ffd769"]<br>
+            .column_attr:hover .icon-clock[style*="color:#ffd769"]
+        </div>
+    </div>
+    
+    <h2 style="text-align:center; color:#ffd769; margin-bottom:20px;">⚡ Pasa el cursor sobre cada icono</h2>
+    
+    <div class="test-grid">
+        <!-- Crimpado -->
+        <div class="column_attr clearfix align_center">
+            <i class="icon-tools-2" style="font-size:50px;color:#ffd769;"></i>
+            <hr class="no_line" style="margin:0 auto 15px">
+            <h5 style="color:#ffffff;"><strong>Crimpado de Mangueras</strong></h5>
+            <p style="color:#ffffff; font-size:14px;">icon-tools-2</p>
+        </div>
+        
+        <!-- Vulcanizado -->
+        <div class="column_attr clearfix align_center">
+            <i class="icon-wrench" style="font-size:50px;color:#ffd769;"></i>
+            <hr class="no_line" style="margin:0 auto 15px">
+            <h5 style="color:#ffffff;"><strong>Vulcanizado de Bandas</strong></h5>
+            <p style="color:#ffffff; font-size:14px;">icon-wrench</p>
+        </div>
+        
+        <!-- Capacitación -->
+        <div class="column_attr clearfix align_center">
+            <i class="icon-graduation" style="font-size:50px;color:#ffd769;"></i>
+            <hr class="no_line" style="margin:0 auto 15px">
+            <h5 style="color:#ffffff;"><strong>Capacitación</strong></h5>
+            <p style="color:#ffffff; font-size:14px;">icon-graduation</p>
+        </div>
+        
+        <!-- Urgencias -->
+        <div class="column_attr clearfix align_center">
+            <i class="icon-clock" style="font-size:50px;color:#ffd769;"></i>
+            <hr class="no_line" style="margin:0 auto 15px">
+            <h5 style="color:#ffffff;"><strong>Urgencias 24/7</strong></h5>
+            <p style="color:#ffffff; font-size:14px;">icon-clock</p>
+        </div>
+    </div>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; max-width: 1200px; margin: 0 auto; color: white;">
+        <h3 style="color:#10b981; text-align:center;">✅ Resultado Esperado al Hacer Hover:</h3>
+        <ul style="line-height: 2;">
+            <li>✨ Icono debe <strong>rotar 360° en 3D</strong></li>
+            <li>📏 Icono debe <strong>crecer 20%</strong> (scale 1.2)</li>
+            <li>🎨 Icono debe cambiar de <strong style="color:#ffd769;">AMARILLO (#ffd769)</strong> a <strong>BLANCO (#ffffff)</strong></li>
+            <li>⚡ Transición debe ser <strong>suave</strong> (0.3 segundos)</li>
+        </ul>
+        
+        <hr style="border-color: rgba(255,255,255,0.2); margin: 20px 0;">
+        
+        <h3 style="color:#f59e0b; text-align:center;">⚠️ Si NO funciona algún icono:</h3>
+        <ol style="line-height: 2;">
+            <li>Abre las <strong>DevTools</strong> del navegador (F12)</li>
+            <li>Ve a la pestaña <strong>Elements</strong></li>
+            <li>Haz clic derecho en el icono → <strong>Inspect</strong></li>
+            <li>Verifica que tenga la clase correcta (<code>icon-tools-2</code>, etc.)</li>
+            <li>Verifica que el style inline sea exactamente: <code>color:#ffd769</code></li>
+            <li>En la pestaña <strong>Styles</strong>, busca si hay reglas CSS en conflicto</li>
+        </ol>
+    </div>
+    
+    <script>
+        // Debug en consola
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = document.querySelectorAll('.column_attr i');
+            
+            console.log('🔍 Debug - Iconos encontrados:');
+            icons.forEach((icon, index) => {
+                const classes = icon.className;
+                const style = icon.getAttribute('style');
+                console.log(`Icono ${index + 1}:`, {
+                    classes: classes,
+                    style: style,
+                    hasYellowColor: style.includes('color:#ffd769')
+                });
+            });
+            
+            // Event listener para hover
+            document.querySelectorAll('.column_attr').forEach((elem, index) => {
+                elem.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('i');
+                    const computedStyle = window.getComputedStyle(icon);
+                    console.log(`🎯 Hover en icono ${index + 1}:`, {
+                        color: computedStyle.color,
+                        transform: computedStyle.transform
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

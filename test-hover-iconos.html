@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Hover Iconos TPMI</title>
+    
+    <!-- CSS Theme -->
+    <link rel='stylesheet' href='assets/css/global.css'>
+    <link rel='stylesheet' href='assets/css/structure.css'>
+    <link rel='stylesheet' href='assets/css/industry2.css'>
+    
+    <style>
+        body {
+            padding: 50px;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1014f5;
+            margin-bottom: 50px;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .test-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .test-card i {
+            font-size: 60px;
+            color: #1014f5;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover i {
+            transform: scale(1.2) rotateY(360deg);
+            color: #ffd769 !important;
+        }
+        
+        .test-card h3 {
+            color: #1014f5;
+            margin: 10px 0;
+        }
+        
+        .test-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .status {
+            text-align: center;
+            padding: 20px;
+            background: rgba(16, 93, 66, 0.1);
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .status h2 {
+            color: #105d42;
+            margin-bottom: 10px;
+        }
+        
+        .icon-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .icon-list li {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .instructions {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1014f5;
+        }
+        
+        .instructions h2 {
+            color: #1014f5;
+            margin-top: 0;
+        }
+        
+        .instructions ol {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test de Efectos Hover - Rodamientos y Bandas</h1>
+        
+        <div class="instructions">
+            <h2>📋 Instrucciones de Prueba:</h2>
+            <ol>
+                <li><strong>Pasa el cursor</strong> sobre cada tarjeta</li>
+                <li><strong>Verifica que:</strong>
+                    <ul>
+                        <li>La tarjeta se eleva (translateY)</li>
+                        <li>Aparece sombra más pronunciada</li>
+                        <li>El icono hace <strong>rotación 3D</strong> (360°)</li>
+                        <li>El icono cambia de <strong>azul (#1014f5)</strong> a <strong>amarillo (#ffd769)</strong></li>
+                        <li>El icono aumenta de <strong>tamaño (scale 1.2)</strong></li>
+                    </ul>
+                </li>
+                <li><strong>La animación debe ser suave</strong> (0.3s)</li>
+            </ol>
+        </div>
+        
+        <div class="status">
+            <h2>✅ Iconos Actualizados y Listos para Prueba</h2>
+            <ul class="icon-list">
+                <li>✓ icon-cog</li>
+                <li>✓ icon-loop</li>
+                <li>✓ icon-flash</li>
+                <li>✓ icon-link</li>
+                <li>✓ icon-tools</li>
+                <li>✓ icon-droplet</li>
+            </ul>
+        </div>
+        
+        <h2 style="text-align:center; color:#1014f5; margin-bottom:30px;">Productos Principales</h2>
+        
+        <div class="card-grid">
+            <!-- Rodamientos -->
+            <div class="test-card">
+                <i class="icon-cog"></i>
+                <h3>Rodamientos</h3>
+                <p>Rodamientos rígidos de bolas, de rodillos, axiales y lineales de las mejores marcas: FAG, INA, SKF, KOYO, RKB.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-cog ⚙️</small>
+            </div>
+            
+            <!-- Bandas Industriales -->
+            <div class="test-card">
+                <i class="icon-loop"></i>
+                <h3>Bandas Industriales</h3>
+                <p>Bandas en V, planas, dentadas y transportadoras. Marcas: Gates, Optibelt, Bando. Servicio de vulcanizado y devanado.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-loop 🔄</small>
+            </div>
+            
+            <!-- Motores Eléctricos -->
+            <div class="test-card">
+                <i class="icon-flash"></i>
+                <h3>Motores Eléctricos</h3>
+                <p>Motores trifásicos y monofásicos, reductores y variadores de velocidad. Marcas: WEG, ABB Baldor, Teco, Marathon.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-flash ⚡</small>
+            </div>
+            
+            <!-- Cadenas y Sprockets -->
+            <div class="test-card">
+                <i class="icon-link"></i>
+                <h3>Cadenas y Sprockets</h3>
+                <p>Cadenas de transmisión, transportadoras y agrícolas. Sprockets de diferentes pasos y dientes. Marcas: Martin, SFR Chain.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-link 🔗</small>
+            </div>
+            
+            <!-- Mangueras y Conexiones -->
+            <div class="test-card">
+                <i class="icon-tools"></i>
+                <h3>Mangueras y Conexiones</h3>
+                <p>Mangueras hidráulicas y neumáticas, conexiones, adaptadores. Servicio de crimpado móvil y en planta.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-tools 🔧</small>
+            </div>
+            
+            <!-- Lubricantes -->
+            <div class="test-card">
+                <i class="icon-droplet"></i>
+                <h3>Lubricantes</h3>
+                <p>Grasas industriales, aceites hidráulicos, selladores y adhesivos. Marcas: Loctite, Vibra-Tite.</p>
+                <small style="color:#999; margin-top:10px;">Icono: icon-droplet 💧</small>
+            </div>
+        </div>
+        
+        <div style="background: #fff; padding: 30px; border-radius: 8px; margin-top: 30px;">
+            <h2 style="color:#1014f5; text-align:center;">📊 Resultados Esperados</h2>
+            <table style="width:100%; border-collapse: collapse; margin-top:20px;">
+                <thead>
+                    <tr style="background:#1014f5; color:white;">
+                        <th style="padding:15px; text-align:left;">Efecto</th>
+                        <th style="padding:15px; text-align:center;">Estado</th>
+                        <th style="padding:15px; text-align:left;">Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px;">Elevación de tarjeta</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">translateY(-10px)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px;">Sombra aumentada</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">box-shadow 0 15px 35px</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px;">Rotación 3D de icono</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">rotateY(360deg)</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px;">Cambio de color</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">#1014f5 → #ffd769</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px;">Escala de icono</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">scale(1.2)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:15px;">Duración de animación</td>
+                        <td style="padding:15px; text-align:center;">✅</td>
+                        <td style="padding:15px;">0.3 segundos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="background: #10b981; color:white; padding: 20px; border-radius: 8px; margin-top: 30px; text-align:center;">
+            <h3 style="margin:0;">✨ Si todos los efectos funcionan correctamente, ¡las animaciones están listas!</h3>
+        </div>
+    </div>
+</body>
+</html>

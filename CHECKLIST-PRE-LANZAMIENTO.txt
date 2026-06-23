@@ -1,0 +1,298 @@
+═══════════════════════════════════════════════════════
+  ✅ CHECKLIST PRE-LANZAMIENTO
+  TPMI REFACCIONES - SITIO WEB ONEPAGE
+═══════════════════════════════════════════════════════
+
+Usa este checklist para asegurarte que todo esté 
+listo antes de lanzar tu sitio al público.
+
+Marca con [X] cada item completado.
+
+═══════════════════════════════════════════════════════
+📋 FASE 1: ARCHIVOS Y ESTRUCTURA
+═══════════════════════════════════════════════════════
+
+[ ] Todos los archivos subidos a cPanel
+[ ] Archivos en la carpeta correcta (public_html)
+[ ] Permisos correctos (644 para archivos PHP)
+[ ] Carpeta includes/ con permisos 755
+[ ] Carpeta assets/ con permisos 755
+[ ] .htaccess está presente y funciona
+[ ] test-server.php ejecutado y muestra todo OK
+[ ] test-server.php ELIMINADO (por seguridad)
+
+═══════════════════════════════════════════════════════
+⚙️ FASE 2: CONFIGURACIÓN
+═══════════════════════════════════════════════════════
+
+[ ] config.php editado con información real
+[ ] Nombre de la empresa correcto
+[ ] Email de contacto correcto y funcionando
+[ ] Teléfono actualizado
+[ ] WhatsApp correcto (sin + ni espacios)
+[ ] Dirección completa y correcta
+[ ] Redes sociales actualizadas
+[ ] URLs de redes sociales funcionan
+
+═══════════════════════════════════════════════════════
+📧 FASE 3: EMAIL Y FORMULARIO
+═══════════════════════════════════════════════════════
+
+[ ] Cuenta de email creada en cPanel
+[ ] Email de contacto recibe mensajes
+[ ] Formulario de contacto probado
+[ ] Mensaje de prueba enviado con éxito
+[ ] Mensaje de prueba recibido en inbox
+[ ] Validación de campos funciona
+[ ] Mensajes de error se muestran correctamente
+[ ] Mensaje de éxito se muestra correctamente
+[ ] Checkbox de privacidad obligatorio
+
+═══════════════════════════════════════════════════════
+🎨 FASE 4: CONTENIDO Y DISEÑO
+═══════════════════════════════════════════════════════
+
+[ ] Logo de la empresa subido y se ve bien
+[ ] Logo visible en header
+[ ] Favicon actualizado
+[ ] Textos del slider personalizados
+[ ] Sección About con tu información real
+[ ] Estadísticas actualizadas (años, clientes, etc)
+[ ] Valores de la empresa personalizados
+[ ] Productos y servicios actualizados del PDF
+[ ] Descripciones claras y sin errores
+[ ] Industrias que atiendes correctas
+[ ] Servicios especializados actualizados
+[ ] Marcas mencionadas (si aplica)
+[ ] Imágenes de productos subidas (si tienes)
+[ ] Todas las imágenes optimizadas
+[ ] Sin placeholder text (Lorem ipsum)
+[ ] Ortografía revisada en todo el sitio
+
+═══════════════════════════════════════════════════════
+🔗 FASE 5: NAVEGACIÓN Y ENLACES
+═══════════════════════════════════════════════════════
+
+[ ] Menú principal funciona
+[ ] Smooth scroll entre secciones funciona
+[ ] Sección activa se marca en el menú
+[ ] Todos los enlaces internos funcionan
+[ ] Enlaces de redes sociales funcionan
+[ ] Botón "Cotizar Ahora" funciona
+[ ] WhatsApp flotante funciona
+[ ] WhatsApp flotante visible en todas las secciones
+[ ] Enlaces abren en nueva pestaña cuando deben
+[ ] No hay enlaces rotos (404)
+
+═══════════════════════════════════════════════════════
+📱 FASE 6: RESPONSIVE Y MÓVIL
+═══════════════════════════════════════════════════════
+
+[ ] Sitio probado en móvil (iPhone/Android)
+[ ] Sitio probado en tablet
+[ ] Sitio probado en desktop
+[ ] Menú móvil funciona (hamburguesa)
+[ ] Textos legibles en móvil
+[ ] Botones táctiles en móvil
+[ ] Imágenes se adaptan correctamente
+[ ] WhatsApp flotante visible en móvil
+[ ] Formulario funciona en móvil
+[ ] No hay scroll horizontal
+[ ] Todo el contenido visible sin zoom
+
+═══════════════════════════════════════════════════════
+⚡ FASE 7: RENDIMIENTO
+═══════════════════════════════════════════════════════
+
+[ ] Sitio carga en menos de 3 segundos
+[ ] Imágenes optimizadas (comprimidas)
+[ ] Slider funciona sin lag
+[ ] Animaciones suaves
+[ ] No hay errores en consola del navegador
+[ ] Cache del navegador configurado
+[ ] GZIP compresión habilitada (en .htaccess)
+
+═══════════════════════════════════════════════════════
+🔒 FASE 8: SEGURIDAD
+═══════════════════════════════════════════════════════
+
+[ ] test-server.php ELIMINADO
+[ ] config.php protegido (no accesible desde web)
+[ ] .htaccess protegiendo archivos sensibles
+[ ] Formulario sanitiza datos correctamente
+[ ] Sin información sensible expuesta
+[ ] Headers de seguridad configurados
+[ ] SSL/HTTPS habilitado (recomendado)
+[ ] Forzar HTTPS configurado (si tienes SSL)
+[ ] Certificado SSL válido (si aplica)
+
+═══════════════════════════════════════════════════════
+🔍 FASE 9: SEO Y META TAGS
+═══════════════════════════════════════════════════════
+
+[ ] Title tag personalizado
+[ ] Meta description personalizada
+[ ] Meta keywords agregadas
+[ ] Open Graph tags (para redes sociales)
+[ ] Favicon visible en pestaña
+[ ] URLs amigables
+[ ] Sitemap.xml (opcional pero recomendado)
+[ ] robots.txt configurado (opcional)
+
+═══════════════════════════════════════════════════════
+🧪 FASE 10: PRUEBAS FINALES
+═══════════════════════════════════════════════════════
+
+[ ] Probado en Chrome
+[ ] Probado en Firefox
+[ ] Probado en Safari
+[ ] Probado en Edge
+[ ] Probado en modo incógnito
+[ ] Caché del navegador limpiado y re-probado
+[ ] Probado desde diferentes dispositivos
+[ ] Probado desde diferentes redes (WiFi/4G)
+[ ] Otra persona revisó el sitio (feedback)
+[ ] Errores 404 corregidos
+[ ] Errores 500 corregidos
+[ ] Sin warnings en PHP
+
+═══════════════════════════════════════════════════════
+📊 FASE 11: ANALÍTICAS (OPCIONAL)
+═══════════════════════════════════════════════════════
+
+[ ] Google Analytics instalado
+[ ] Google Search Console configurado
+[ ] Facebook Pixel (si usas ads)
+[ ] Conversiones configuradas
+[ ] Eventos de formulario trackeados
+
+═══════════════════════════════════════════════════════
+💼 FASE 12: LEGAL
+═══════════════════════════════════════════════════════
+
+[ ] Aviso de privacidad agregado (recomendado)
+[ ] Términos y condiciones (si aplica)
+[ ] Información fiscal/legal (si es requerido)
+[ ] Checkbox de privacidad en formulario
+[ ] Cumplimiento GDPR/LFPDPPP (si aplica)
+
+═══════════════════════════════════════════════════════
+🎯 FASE 13: MARKETING Y LANZAMIENTO
+═══════════════════════════════════════════════════════
+
+[ ] Dominio apunta correctamente
+[ ] DNS propagado (puede tomar 24-48hrs)
+[ ] Email signature con link al nuevo sitio
+[ ] Redes sociales actualizadas con nuevo link
+[ ] Google My Business actualizado
+[ ] Tarjetas de presentación actualizadas
+[ ] Clientes importantes notificados
+[ ] Email marketing enviado
+[ ] Post en redes sociales del lanzamiento
+
+═══════════════════════════════════════════════════════
+📝 FASE 14: DOCUMENTACIÓN Y BACKUP
+═══════════════════════════════════════════════════════
+
+[ ] Backup del sitio descargado
+[ ] Credenciales guardadas en lugar seguro
+[ ] Documentación revisada
+[ ] Manual de actualizaciones creado
+[ ] Contacto de soporte anotado
+[ ] Fecha de renovación de dominio anotada
+[ ] Fecha de renovación de hosting anotada
+
+═══════════════════════════════════════════════════════
+✨ FASE 15: POST-LANZAMIENTO
+═══════════════════════════════════════════════════════
+
+[ ] Monitorear emails del formulario primeros días
+[ ] Revisar logs de error
+[ ] Medir velocidad del sitio
+[ ] Pedir feedback a usuarios
+[ ] Hacer ajustes según feedback
+[ ] Revisar estadísticas de visitas
+[ ] Plan de contenido futuro definido
+
+═══════════════════════════════════════════════════════
+🎉 ¡LISTO PARA LANZAR!
+═══════════════════════════════════════════════════════
+
+Si marcaste TODO lo anterior, ¡tu sitio está listo!
+
+Último paso:
+[ ] Respira profundo
+[ ] Haz click en "Publicar" / "Go Live"
+[ ] ¡Celebra! 🎊
+
+═══════════════════════════════════════════════════════
+📞 SOPORTE POST-LANZAMIENTO
+═══════════════════════════════════════════════════════
+
+Primeras 24 horas:
+→ Monitorea el formulario de contacto
+→ Revisa que los emails lleguen
+→ Verifica métricas de velocidad
+→ Atiende feedback inmediato
+
+Primera semana:
+→ Revisa analíticas diariamente
+→ Ajusta contenido según interacción
+→ Responde comentarios en redes
+→ Optimiza lo que sea necesario
+
+Primer mes:
+→ Analiza datos de conversión
+→ Identifica páginas/secciones más visitadas
+→ Optimiza formulario si es necesario
+→ Planea mejoras futuras
+
+═══════════════════════════════════════════════════════
+🔧 MANTENIMIENTO MENSUAL RECOMENDADO
+═══════════════════════════════════════════════════════
+
+[ ] Backup mensual del sitio
+[ ] Revisar logs de error
+[ ] Actualizar contenido si es necesario
+[ ] Revisar que formulario funcione
+[ ] Verificar velocidad de carga
+[ ] Revisar enlaces rotos
+[ ] Actualizar información de contacto (si cambió)
+[ ] Renovar SSL/certificados (según vencimiento)
+
+═══════════════════════════════════════════════════════
+
+NOTAS IMPORTANTES:
+
+⚠️ NO ELIMINES ESTOS ARCHIVOS DEL SERVIDOR:
+   - .htaccess
+   - config.php
+   - send-email.php
+   - index.php
+   - Carpeta includes/
+   - Carpeta assets/
+
+⚠️ ANTES DE HACER CAMBIOS IMPORTANTES:
+   - Siempre haz backup primero
+   - Prueba en local o staging
+   - Implementa en horarios de bajo tráfico
+
+⚠️ MANTÉN SEGURO:
+   - Contraseñas de cPanel
+   - Credenciales FTP
+   - Accesos de email
+   - Backups en lugar seguro
+
+═══════════════════════════════════════════════════════
+
+Fecha de lanzamiento prevista: _______________
+
+Fecha de lanzamiento real: _______________
+
+Lanzado por: _______________
+
+═══════════════════════════════════════════════════════
+
+¡ÉXITO CON TU NUEVO SITIO WEB! 🚀
+
+═══════════════════════════════════════════════════════

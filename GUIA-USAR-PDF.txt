@@ -1,0 +1,316 @@
+# GUÍA: CÓMO USAR LA INFORMACIÓN DEL PDF (triptico_final.pdf)
+# PARA PERSONALIZAR EL SITIO WEB
+
+## 📋 UBICACIÓN DEL PDF
+El PDF triptico_final.pdf está en: /home/raktus/Downloads/triptico_final.pdf
+
+## 🎯 QUÉ HACER CON LA INFORMACIÓN DEL PDF
+
+El tríptico seguramente contiene:
+- Productos que vendes
+- Servicios que ofreces
+- Marcas que manejas
+- Industrias a las que sirves
+- Información de contacto
+- Tu propuesta de valor
+
+## 📝 ARCHIVOS A ACTUALIZAR CON INFO DEL PDF
+
+### 1. SECCIÓN SERVICIOS (includes/section-services.php)
+
+Reemplaza los productos actuales con los tuyos del PDF:
+
+BUSCA en el archivo las secciones:
+```html
+<!-- Rodamientos -->
+<!-- Bandas Industriales -->
+<!-- Motores Eléctricos -->
+etc...
+```
+
+ACTUALIZA con tus productos reales. Ejemplo:
+
+```php
+<!-- TU PRODUCTO 1 -->
+<div class="wrap mcb-wrap one-third valign-middle clearfix" style="padding:0 2%">
+    <div class="mcb-wrap-inner">
+        <div class="column mcb-column one column_column">
+            <div class="column_attr clearfix" style="background-color:#fff;padding:40px;min-height:350px;">
+                <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                    <div class="image_wrapper">
+                        <i class="icon-[ELEGIR-ICONO]" style="font-size:60px;color:#105d42;"></i>
+                    </div>
+                </div>
+                <hr class="no_line" style="margin:0 auto 20px">
+                <h4 style="color:#105d42;text-align:center;">[NOMBRE DE TU PRODUCTO]</h4>
+                <hr class="no_line" style="margin:0 auto 15px">
+                <p style="text-align:center;">[DESCRIPCIÓN DE TU PRODUCTO DEL PDF]</p>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+### 2. SECCIÓN ABOUT (includes/section-about.php)
+
+Actualiza con tu historia y valores:
+
+BUSCA:
+```html
+<h3 style="color:#105d42;">Compromiso con la excelencia</h3>
+```
+
+REEMPLAZA con tu misión/visión del PDF
+
+BUSCA las estadísticas:
+```html
+<h2 style="color:#105d42;">+15</h2>
+<h5>Años de experiencia...</h5>
+```
+
+ACTUALIZA con tus números reales
+
+### 3. CONFIGURACIÓN (config.php)
+
+Del PDF extrae y actualiza:
+```php
+define('SITE_NAME', '[NOMBRE DE TU EMPRESA]');
+define('CONTACT_EMAIL', '[EMAIL DEL PDF]');
+define('CONTACT_PHONE', '[TELÉFONO DEL PDF]');
+define('CONTACT_WHATSAPP', '[WHATSAPP DEL PDF]');
+define('CONTACT_ADDRESS', '[DIRECCIÓN DEL PDF]');
+```
+
+## 🔍 ICONOS DISPONIBLES PARA PRODUCTOS
+
+El tema incluye estos iconos (cambia "icon-nombre"):
+
+Herramientas y mecánica:
+- icon-tools
+- icon-tools-2
+- icon-wrench
+- icon-cog
+- icon-flow-merge
+- icon-chart-line
+
+Industria:
+- icon-flash (eléctrico)
+- icon-droplet (líquidos)
+- icon-link (cadenas)
+- icon-layers (materiales)
+
+Comunicación:
+- icon-phone
+- icon-mail
+- icon-location
+- icon-clock
+
+Otros:
+- icon-docs
+- icon-user
+- icon-trophy
+- icon-graduation
+
+## 📸 IMÁGENES DEL PDF
+
+Si el PDF tiene imágenes o fotos:
+
+1. Guárdalas en formato web (JPG o PNG)
+2. Optimiza el tamaño (máximo 1920px ancho)
+3. Súbelas a: assets/images/
+4. Actualiza las rutas en los archivos PHP
+
+Ejemplo:
+```php
+<img src="assets/images/industry2-slider-bg.jpg" 
+```
+Cambia por:
+```php
+<img src="assets/images/tu-nueva-imagen.jpg"
+```
+
+## 🏭 INDUSTRIAS QUE ATIENDES
+
+BUSCA en section-services.php:
+```html
+<!-- Industrias que atendemos -->
+```
+
+ACTUALIZA la lista según el PDF:
+```php
+<h5 style="color:#105d42;"><strong>Minera</strong></h5>
+<h5 style="color:#105d42;"><strong>Automotriz</strong></h5>
+<h5 style="color:#105d42;"><strong>[TU INDUSTRIA]</strong></h5>
+```
+
+## 📋 EJEMPLO PRÁCTICO
+
+Supongamos que tu PDF dice:
+
+"Ofrecemos rodamientos SKF, cadenas TSUBAKI y bandas GOODYEAR 
+para la industria alimentaria y farmacéutica"
+
+ENTONCES actualiza así:
+
+```php
+<!-- Rodamientos -->
+<h4 style="color:#105d42;text-align:center;">Rodamientos SKF</h4>
+<p style="text-align:center;">
+    Rodamientos de bolas, rodillos y agujas. 
+    Especiales para alta velocidad y ambientes extremos.
+    Certificación FDA para industria alimentaria.
+</p>
+
+<!-- Cadenas -->
+<h4 style="color:#105d42;text-align:center;">Cadenas TSUBAKI</h4>
+<p style="text-align:center;">
+    Cadenas de transmisión de alta resistencia.
+    Ideales para transportadores en industria alimentaria.
+</p>
+
+<!-- Bandas -->
+<h4 style="color:#105d42;text-align:center;">Bandas GOODYEAR</h4>
+<p style="text-align:center;">
+    Bandas transportadoras de grado alimenticio.
+    Resistentes a aceites, grasas y temperaturas extremas.
+</p>
+```
+
+## 🔧 SERVICIOS ESPECIALIZADOS
+
+Si el PDF menciona servicios especiales:
+
+BUSCA en section-services.php:
+```html
+<!-- Servicios especializados -->
+```
+
+AGREGA/MODIFICA tus servicios:
+```php
+<h5 style="color:#ffffff;"><strong>Instalación</strong></h5>
+<p style="color:#ffffff;">Instalamos rodamientos en tu planta</p>
+
+<h5 style="color:#ffffff;"><strong>Mantenimiento</strong></h5>
+<p style="color:#ffffff;">Planes de mantenimiento preventivo</p>
+```
+
+## 📞 INFORMACIÓN DE CONTACTO
+
+Del PDF extrae TODA la info de contacto:
+
+- Teléfono principal
+- Teléfono alternativo (si hay)
+- WhatsApp
+- Email general
+- Email de ventas
+- Email de soporte
+- Dirección física completa
+- Horario de atención
+- Redes sociales
+
+Actualiza en config.php y en section-contact.php
+
+## 🎨 MARCAS QUE MANEJAS
+
+Si el PDF lista marcas:
+
+Opción 1: Crear una sección de marcas (después de servicios)
+Opción 2: Mencionarlas en la descripción de cada producto
+Opción 3: Agregar logos en el footer
+
+Para agregar logos de marcas:
+
+1. Consigue los logos en formato PNG (fondo transparente)
+2. Súbelos a: assets/images/marcas/
+3. Agrega una nueva sección en index.php:
+
+```php
+<!-- Sección de Marcas -->
+<div class="section mcb-section" style="padding:50px 0;background:#f9f9f9">
+    <div class="section_wrapper mcb-section-inner">
+        <h3 style="text-align:center;color:#105d42;">Marcas que Manejamos</h3>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin-top:30px">
+            <img src="assets/images/marcas/skf.png" alt="SKF" style="height:60px">
+            <img src="assets/images/marcas/gates.png" alt="Gates" style="height:60px">
+            <!-- Más marcas -->
+        </div>
+    </div>
+</div>
+```
+
+## ✅ CHECKLIST DE ACTUALIZACIÓN
+
+Imprime y marca cada punto cuando lo completes:
+
+INFORMACIÓN BÁSICA:
+□ Actualicé el nombre de la empresa
+□ Actualicé email de contacto
+□ Actualicé teléfono
+□ Actualicé WhatsApp
+□ Actualicé dirección
+□ Actualicé redes sociales
+
+SECCIÓN HOME:
+□ Actualicé el título principal del slider
+□ Cambié la imagen del slider
+□ Actualicé los textos descriptivos
+
+SECCIÓN ABOUT:
+□ Escribí la historia real de mi empresa
+□ Actualicé las estadísticas (años, clientes, etc)
+□ Personalicé los valores de la empresa
+
+SECCIÓN SERVICES:
+□ Agregué/modifiqué mis productos reales
+□ Actualicé las descripciones según mi catálogo
+□ Agregué mis servicios especializados
+□ Actualicé las industrias que atiendo
+□ Mencioné las marcas que manejo
+
+SECCIÓN CONTACT:
+□ Verifiqué que la info de contacto sea correcta
+□ Probé el formulario
+□ Configuré el email para recibir mensajes
+
+IMÁGENES:
+□ Subí mi logo
+□ Cambié las imágenes principales
+□ Agregué fotos de mis productos (si tengo)
+□ Optimicé el peso de las imágenes
+
+## 💡 TIPS FINALES
+
+1. Lee TODO el PDF primero, haz notas
+2. Organiza la información por categorías
+3. Prioriza lo más importante
+4. Sé claro y conciso en las descripciones
+5. Usa lenguaje que tus clientes entiendan
+6. Menciona beneficios, no solo características
+7. Incluye llamados a la acción (CTAs)
+8. Revisa ortografía y gramática
+
+## 🆘 SI NECESITAS AYUDA
+
+1. Lee el PDF completo
+2. Haz una lista de:
+   - Productos que vendes
+   - Servicios que ofreces
+   - Marcas que manejas
+   - Industrias que atiendes
+   - Tu propuesta de valor única
+
+3. Edita sección por sección
+4. Guarda y prueba después de cada cambio
+5. Pide a alguien más que revise el contenido
+
+## 📧 PRÓXIMO PASO
+
+1. Abre el PDF: /home/raktus/Downloads/triptico_final.pdf
+2. Lee toda la información
+3. Toma notas de lo más importante
+4. Sigue esta guía para actualizar cada archivo
+5. Prueba y ajusta según necesites
+
+---
+
+¡Mucho éxito con tu proyecto!

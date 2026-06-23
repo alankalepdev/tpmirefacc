@@ -1,0 +1,85 @@
+# Configuración para cPanel
+# Apache .htaccess para TPMI Refacciones
+
+# Habilitar RewriteEngine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Forzar HTTPS (descomenta las siguientes líneas cuando tengas SSL)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Forzar WWW (opcional - descomenta si quieres forzar www)
+    # RewriteCond %{HTTP_HOST} !^www\.
+    # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redireccionar index.html a index.php
+    RewriteCond %{THE_REQUEST} /index\.html [NC]
+    RewriteRule ^index\.html$ /index.php [L,R=301,NC]
+
+    # Si el archivo existe, mostrarlo directamente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Cualquier petición que no sea un archivo o directorio, redirigir a index.php
+    RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>
+
+# Protección de archivos
+<FilesMatch "\.(htaccess|htpasswd|ini|log|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger config.php
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Habilitar compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+
+# Configurar caché del navegador
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Página de error personalizada (opcional)
+# ErrorDocument 404 /404.php
+# ErrorDocument 500 /500.php
+
+# Configuración de PHP (si mod_php está habilitado)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Prevenir ataques de clickjacking
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Charset UTF-8
+AddDefaultCharset UTF-8

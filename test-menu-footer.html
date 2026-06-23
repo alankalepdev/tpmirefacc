@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Menú y Footer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .instructions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(16, 185, 129, 0.95);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 10000;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .instructions li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+        
+        .test-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .status-check {
+            background: #ffd769;
+            color: #000;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .success-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        
+        #home { background: #1014f5; color: white; }
+        #about { background: #f9f9f9; color: #1014f5; }
+        #services { background: #105d42; color: white; }
+        #contact { background: #ffffff; color: #1014f5; }
+        
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+        <h3>✅ Pruebas a Realizar:</h3>
+        <ul>
+            <li><span class="test-status status-check">1</span>Scroll hasta CONTACTO - debe aparecer RÁPIDO</li>
+            <li><span class="test-status status-check">2</span>Scroll hasta FOOTER - debe aparecer RÁPIDO</li>
+            <li><span class="test-status status-check">3</span>Haz clic en HOME del menú</li>
+            <li><span class="test-status status-check">4</span>Verifica que el menú NO desaparezca</li>
+            <li><span class="test-status status-check">5</span>Verifica que HOME quede activo</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 13px; opacity: 0.9;">
+            <strong>Cambios aplicados:</strong><br>
+            • Footer y Contacto: animación 0.3s (antes 0.6s)<br>
+            • Menú: mantiene activo en scroll top<br>
+            • Excluidas animaciones pesadas
+        </p>
+    </div>
+    
+    <div class="success-banner">
+        🎯 Optimizaciones Aplicadas - Prueba el Sitio Real
+    </div>
+    
+    <section id="home">
+        <div>
+            <div>🏠 HOME</div>
+            <div style="font-size: 18px; margin-top: 20px;">Scroll hacia abajo para probar...</div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div>📖 ABOUT</div>
+    </section>
+    
+    <section id="services">
+        <div>⚙️ SERVICES</div>
+    </section>
+    
+    <section id="contact">
+        <div>
+            <div>📧 CONTACT</div>
+            <div style="font-size: 18px; margin-top: 20px;">¿Apareció rápido?</div>
+        </div>
+    </section>
+    
+    <footer>
+        <h3>FOOTER SECTION</h3>
+        <p style="margin-top: 20px;">¿Apareció sin demora?</p>
+        <p style="margin-top: 40px; opacity: 0.7; font-size: 14px;">
+            © 2026 TPMI - Todos los derechos reservados
+        </p>
+    </footer>
+    
+    <script>
+        console.log('%c✅ Test Page Loaded', 'color: #10b981; font-size: 16px; font-weight: bold;');
+        console.log('%cInstrucciones:', 'color: #3b82f6; font-size: 14px;');
+        console.log('1. Haz scroll hasta el footer');
+        console.log('2. Observa si aparece rápidamente');
+        console.log('3. Regresa al home usando el menú');
+        console.log('4. Verifica que el menú no desaparezca');
+    </script>
+</body>
+</html>

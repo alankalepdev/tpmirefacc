@@ -1,0 +1,244 @@
+# GUÍA DE DESPLIEGUE EN CPANEL
+# TPMI Refacciones - Sitio Web OnePage
+
+## 📦 PASO 1: PREPARAR ARCHIVOS PARA SUBIR
+
+### Archivos y carpetas necesarios:
+```
+.htaccess
+config.php
+index.php
+send-email.php
+test-server.php (temporal - eliminar después)
+includes/
+  ├── footer.php
+  ├── section-about.php
+  ├── section-contact.php
+  ├── section-home.php
+  └── section-services.php
+assets/
+  ├── css/
+  ├── images/
+  ├── js/
+  └── plugins/
+```
+
+NO subir:
+- README.md (opcional)
+- DESPLIEGUE-CPANEL.txt (este archivo)
+- about.html, contact.html, services.html, press.html, post.html (páginas antiguas)
+
+## 🌐 PASO 2: ACCEDER A CPANEL
+
+1. Abre tu navegador
+2. Ingresa a: https://tudominio.com/cpanel
+   (o https://tudominio.com:2083)
+3. Introduce tus credenciales de cPanel
+
+## 📁 PASO 3: SUBIR ARCHIVOS
+
+### Opción A: Usando el Administrador de Archivos (File Manager)
+
+1. En cPanel, busca "Administrador de archivos" o "File Manager"
+2. Navega a "public_html" (o la carpeta de tu dominio)
+3. Si ya hay archivos, haz backup:
+   - Selecciona todos los archivos
+   - Click en "Comprimir" o "Compress"
+   - Nombra el archivo: backup-[fecha].zip
+   - Descárgalo a tu computadora
+
+4. Elimina los archivos antiguos (excepto el backup)
+
+5. Sube los nuevos archivos:
+   - Click en "Cargar" o "Upload"
+   - Selecciona todos los archivos del proyecto
+   - Espera a que termine la carga
+
+6. Extrae archivos comprimidos si los subiste en .zip:
+   - Selecciona el archivo .zip
+   - Click en "Extraer" o "Extract"
+
+### Opción B: Usando FileZilla (FTP)
+
+1. Descarga FileZilla Client
+2. Conecta usando credenciales FTP de cPanel:
+   - Host: ftp.tudominio.com
+   - Usuario: tu usuario de cPanel
+   - Contraseña: tu contraseña de cPanel
+   - Puerto: 21
+
+3. Navega a /public_html/
+4. Arrastra los archivos desde tu computadora
+
+## ⚙️ PASO 4: CONFIGURAR PERMISOS
+
+1. En el Administrador de archivos de cPanel
+2. Selecciona cada archivo/carpeta
+3. Click derecho > "Permisos" o "Permissions"
+4. Configura:
+   ```
+   Archivos .php y .html: 644
+   Archivos .htaccess: 644
+   Carpetas: 755
+   ```
+
+## ✏️ PASO 5: EDITAR CONFIG.PHP
+
+1. Busca el archivo "config.php"
+2. Click derecho > "Editar" o "Edit"
+3. Modifica los siguientes valores:
+
+```php
+// TU INFORMACIÓN REAL
+define('SITE_NAME', 'TPMI Refacciones Industriales');
+define('CONTACT_EMAIL', 'ventas@tpmirefacciones.com');
+define('CONTACT_PHONE', '+52 722 123 4567');
+define('CONTACT_WHATSAPP', '5217221234567'); // SIN + ni espacios
+define('CONTACT_ADDRESS', 'Calle Principal #123, Ciudad, Estado, CP');
+
+// TUS REDES SOCIALES
+define('SOCIAL_FACEBOOK', 'https://facebook.com/tpmirefacciones');
+define('SOCIAL_INSTAGRAM', 'https://instagram.com/tpmirefacciones');
+define('SOCIAL_LINKEDIN', 'https://linkedin.com/company/tpmirefacciones');
+```
+
+4. Guarda los cambios
+
+## 📧 PASO 6: CONFIGURAR EMAIL EN CPANEL
+
+### Crear cuenta de email para el formulario:
+
+1. En cPanel, busca "Cuentas de correo" o "Email Accounts"
+2. Click en "Crear" o "Create"
+3. Crea una cuenta:
+   - Email: ventas@tudominio.com
+   - Contraseña: [una contraseña segura]
+   - Cuota: 250 MB (o más)
+
+4. Esta es la cuenta que recibirá los mensajes del formulario
+
+### Verificar que el email funciona:
+
+1. En cPanel > "Pista de entrega" o "Track Delivery"
+2. Verifica que no haya problemas de envío
+
+## 🔍 PASO 7: PROBAR LA INSTALACIÓN
+
+1. Abre tu navegador
+2. Visita: https://tudominio.com/test-server.php
+3. Verifica que todo esté en verde ✅
+4. Revisa:
+   - ✅ Todos los archivos encontrados
+   - ✅ Extensiones PHP disponibles
+   - ✅ Función mail() habilitada
+   - ✅ Configuración correcta
+
+5. Si hay errores, corrígelos antes de continuar
+
+## 🎨 PASO 8: PERSONALIZAR CONTENIDO
+
+### Subir tu logo:
+1. Ve a: public_html/assets/images/
+2. Sube tus archivos de logo (reemplaza los existentes):
+   - industry2.png (logo normal)
+   - retina-industry2.png (logo 2x para pantallas retina)
+
+### Editar contenido de las secciones:
+1. Abre el Administrador de Archivos
+2. Navega a: public_html/includes/
+3. Edita cada archivo según necesites:
+   - section-home.php → Textos del slider principal
+   - section-about.php → Información de la empresa
+   - section-services.php → Productos y servicios
+   - section-contact.php → Formulario de contacto
+
+### Cambiar imágenes:
+1. Ve a: public_html/assets/images/
+2. Reemplaza las imágenes con las tuyas (usa los mismos nombres o actualiza las rutas en los archivos PHP)
+
+## ✅ PASO 9: PROBAR EL SITIO
+
+1. Visita: https://tudominio.com
+2. Verifica:
+   - ✅ El sitio carga correctamente
+   - ✅ El menú navega entre secciones suavemente
+   - ✅ Las imágenes se ven bien
+   - ✅ El botón de WhatsApp funciona
+   - ✅ Los enlaces de redes sociales funcionan
+
+3. Prueba el formulario:
+   - Llena todos los campos
+   - Envía un mensaje de prueba
+   - Verifica que llegue al email configurado
+
+4. Prueba en móvil:
+   - Abre el sitio desde tu celular
+   - Verifica que todo se vea bien
+   - Prueba el botón de WhatsApp flotante
+
+## 🔒 PASO 10: SEGURIDAD FINAL
+
+1. **ELIMINA test-server.php:**
+   - Selecciona el archivo
+   - Click en "Eliminar" o "Delete"
+
+2. Verifica que .htaccess esté funcionando:
+   - Intenta acceder a: https://tudominio.com/config.php
+   - Debe aparecer "Forbidden" o error 403
+
+3. Opcional - Habilitar SSL/HTTPS:
+   - En cPanel busca "SSL/TLS"
+   - Instala un certificado Let's Encrypt (gratuito)
+   - Luego, en .htaccess, descomenta las líneas de redirección HTTPS
+
+## 🚀 PASO 11: MANTENIMIENTO
+
+### Revisar mensajes del formulario:
+1. Revisa tu email regularmente
+2. O revisa el archivo contact-log.txt en el servidor
+
+### Hacer cambios:
+1. Siempre haz backup antes de editar
+2. Edita los archivos desde el Administrador de Archivos
+3. O descarga, edita localmente y vuelve a subir
+
+### Actualizar contenido:
+- Solo necesitas editar los archivos en includes/
+- No toques config.php a menos que cambies datos de contacto
+
+## 📞 PROBLEMAS COMUNES
+
+### El sitio no carga:
+- Verifica que los archivos estén en public_html
+- Revisa que index.php exista
+- Contacta a tu proveedor de hosting
+
+### El formulario no envía:
+- Verifica config.php tenga el email correcto
+- Revisa que la cuenta de email exista en cPanel
+- Contacta al soporte de tu hosting
+
+### Error 500:
+- Revisa permisos de archivos (644 para .php)
+- Revisa el archivo .htaccess
+- Revisa los logs de error en cPanel
+
+### Las imágenes no se ven:
+- Verifica que la carpeta assets/ se haya subido completa
+- Revisa permisos de la carpeta (755)
+- Verifica las rutas en los archivos PHP
+
+## ✨ ¡LISTO!
+
+Tu sitio web onepage está funcionando. Ahora puedes:
+- ✅ Recibir cotizaciones por el formulario
+- ✅ Mostrar tus productos y servicios
+- ✅ Conectar con clientes por WhatsApp
+- ✅ Compartir en redes sociales
+
+---
+
+Para soporte adicional, contacta a tu desarrollador.
+
+Desarrollado por: Alan Kalep Dev
+Fecha: Junio 2026
