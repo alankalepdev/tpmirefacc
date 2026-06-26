@@ -2,13 +2,6 @@
 
 <!-- Footer -->
 <footer id="Footer" class="clearfix">
-	<div class="footer_action">
-		<div class="container">
-			<div class="column one">
-				<hr class="no_line" style="margin:0 auto 40px"> </div>
-		</div>
-	</div>
-	
 	<div class="footer_copy">
 		<div class="container">
 			<div class="column one">

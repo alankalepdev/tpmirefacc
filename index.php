@@ -548,21 +548,18 @@ require_once 'config.php';
             // ========================================
             // 4. FADE IN ANIMATIONS
             // ========================================
-            // Animar elementos con clase .column al hacer scroll
-            gsap.utils.toArray('.column').forEach((element, index) => {
-                gsap.from(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 85%",
-                        end: "bottom 15%",
-                        toggleActions: "play none none reverse"
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 0.6,
-                    delay: index * 0.1,
-                    ease: "power2.out"
-                });
+            ScrollTrigger.batch('.column', {
+                start: "top 92%",
+                onEnter: batch => {
+                    gsap.from(batch, {
+                        opacity: 0,
+                        y: 40,
+                        duration: 0.5,
+                        stagger: 0.08,
+                        ease: "power2.out"
+                    });
+                },
+                once: true
             });
             
             // ========================================
@@ -652,13 +649,13 @@ require_once 'config.php';
                     gsap.from(items, {
                         scrollTrigger: {
                             trigger: section,
-                            start: "top 80%",
+                            start: "top 92%",
                             toggleActions: "play none none none"
                         },
                         opacity: 0,
-                        y: 20, // Reducido de 30
-                        stagger: 0.1, // Reducido de 0.15
-                        duration: 0.4, // Reducido de 0.6
+                        y: 20,
+                        stagger: 0.08,
+                        duration: 0.4,
                         ease: "power2.out"
                     });
                 }
@@ -721,12 +718,12 @@ require_once 'config.php';
                 gsap.from(heading, {
                     scrollTrigger: {
                         trigger: heading,
-                        start: "top 85%",
+                        start: "top 95%",
                         toggleActions: "play none none none"
                     },
                     opacity: 0,
                     x: -30,
-                    duration: 0.4, // Reducido de 0.6
+                    duration: 0.4,
                     ease: "power2.out"
                 });
             });

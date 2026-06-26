@@ -36,7 +36,7 @@
     </div>
 
     <!-- Formulario de contacto -->
-    <div class="section mcb-section" style="padding-top:110px;padding-bottom:110px">
+    <div class="section mcb-section" style="padding-top:80px;padding-bottom:80px">
         <div class="section_wrapper mcb-section-inner">
             <div class="wrap mcb-wrap one valign-top clearfix">
                 <div class="mcb-wrap-inner">
@@ -46,42 +46,39 @@
                             <hr class="no_line" style="margin:0 auto 15px">
                             <p class="big">Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad</p>
                             <hr class="no_line" style="margin:0 auto 30px">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="section mcb-section" style="padding-top:110px;padding-bottom:70px">
-                <div class="section_wrapper mcb-section-inner">
-                    <div class="wrap mcb-wrap one valign-top clearfix">
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_column">
-                                <div class="column_attr clearfix align_center">
-                                    <h2></h2>
-                                    <hr class="no_line" style="margin:0 auto 25px">
-                                    <div id="contactWrapper">
-                                        <form id="contactform">
-                                            <!-- One Second (1/2) Column -->
-                                            <div class="column one-second">
-                                                <input placeholder="Your name" type="text" name="name" id="name" size="40" aria-required="true" aria-invalid="false" />
-                                            </div>
-                                            <!-- One Second (1/2) Column -->
-                                            <div class="column one-second">
-                                                <input placeholder="Your e-mail" type="email" name="email" id="email" size="40" aria-required="true" aria-invalid="false" />
-                                            </div>
-                                            <div class="column one">
-                                                <input placeholder="Subject" type="text" name="subject" id="subject" size="40" aria-invalid="false" />
-                                            </div>
-                                            <div class="column one">
-                                                <textarea placeholder="Message" name="body" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
-                                            </div>
-                                            <div class="column one">
-                                                <input type="button" value="Send A Message" id="submit" onClick="return check_values();">
-                                            </div>
-                                        </form>
-                                    </div>
+                            <!-- Mensaje de respuesta -->
+                            <div id="contact-message" style="display:none;padding:15px;margin-bottom:20px;border-radius:4px;text-align:left;"></div>
+
+                            <form id="contact-form" action="send-email.php" method="POST">
+                                <div class="column one-second">
+                                    <input placeholder="Tu nombre *" type="text" name="name" id="name" size="40" required />
                                 </div>
-                            </div>
+                                <div class="column one-second">
+                                    <input placeholder="Tu empresa" type="text" name="company" id="company" size="40" />
+                                </div>
+                                <div class="column one-second">
+                                    <input placeholder="Tu email *" type="email" name="email" id="email" size="40" required />
+                                </div>
+                                <div class="column one-second">
+                                    <input placeholder="Tu teléfono *" type="tel" name="phone" id="phone" size="40" required />
+                                </div>
+                                <div class="column one">
+                                    <input placeholder="Asunto" type="text" name="subject" id="subject" size="40" />
+                                </div>
+                                <div class="column one">
+                                    <textarea placeholder="Mensaje *" name="message" id="message" style="width:100%;" rows="8" required></textarea>
+                                </div>
+                                <div class="column one" style="text-align:left;margin-bottom:15px;">
+                                    <label style="font-size:13px;color:#666;cursor:pointer;">
+                                        <input type="checkbox" name="privacy" id="privacy" required style="width:auto;margin-right:8px;">
+                                        Acepto el <a href="#privacy" style="color:#1014f5;">Aviso de Privacidad</a> *
+                                    </label>
+                                </div>
+                                <div class="column one">
+                                    <input type="submit" value="Enviar Cotización" id="submit-btn" class="button button_size_2 button_theme" style="cursor:pointer;" />
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -89,7 +86,7 @@
         </div>
     </div>
 
-    <!-- Mapa o CTA adicional -->
+    <!-- CTA WhatsApp -->
     <div class="section mcb-section" style="padding-top:70px;padding-bottom:70px;background-color:#1014f5">
         <div class="section_wrapper mcb-section-inner">
             <div class="wrap mcb-wrap one-second valign-middle clearfix">
@@ -118,7 +115,6 @@
     </div>
 </section>
 
-<!-- JavaScript para manejo del formulario -->
 <script>
     jQuery(document).ready(function($) {
         $('#contact-form').on('submit', function(e) {
@@ -126,12 +122,10 @@
 
             var form = $(this);
             var messageDiv = $('#contact-message');
-            var submitButton = form.find('button[type="submit"]');
+            var submitBtn = $('#submit-btn');
 
-            // Deshabilitar botón
-            submitButton.prop('disabled', true).find('.button_label').text('ENVIANDO...');
+            submitBtn.prop('disabled', true).val('ENVIANDO...');
 
-            // Enviar formulario
             $.ajax({
                 type: 'POST',
                 url: form.attr('action'),
@@ -139,44 +133,27 @@
                 dataType: 'json',
                 success: function(response) {
                     if (response.success) {
-                        messageDiv.removeClass('error').addClass('success')
-                            .css({
-                                'background-color': '#d4edda',
-                                'color': '#155724',
-                                'border': '1px solid #c3e6cb'
-                            })
+                        messageDiv
+                            .css({ 'background-color': '#d4edda', 'color': '#155724', 'border': '1px solid #c3e6cb' })
                             .html('<strong>¡Éxito!</strong> ' + response.message)
                             .slideDown();
                         form[0].reset();
                     } else {
-                        messageDiv.removeClass('success').addClass('error')
-                            .css({
-                                'background-color': '#f8d7da',
-                                'color': '#721c24',
-                                'border': '1px solid #f5c6cb'
-                            })
+                        messageDiv
+                            .css({ 'background-color': '#f8d7da', 'color': '#721c24', 'border': '1px solid #f5c6cb' })
                             .html('<strong>Error:</strong> ' + response.message)
                             .slideDown();
                     }
                 },
                 error: function() {
-                    messageDiv.removeClass('success').addClass('error')
-                        .css({
-                            'background-color': '#f8d7da',
-                            'color': '#721c24',
-                            'border': '1px solid #f5c6cb'
-                        })
-                        .html('<strong>Error:</strong> Hubo un problema al enviar el formulario. Por favor intenta nuevamente.')
+                    messageDiv
+                        .css({ 'background-color': '#f8d7da', 'color': '#721c24', 'border': '1px solid #f5c6cb' })
+                        .html('<strong>Error:</strong> Hubo un problema al enviar. Por favor intenta nuevamente.')
                         .slideDown();
                 },
                 complete: function() {
-                    // Rehabilitar botón
-                    submitButton.prop('disabled', false).find('.button_label').text('ENVIAR COTIZACIÓN');
-
-                    // Ocultar mensaje después de 5 segundos
-                    setTimeout(function() {
-                        messageDiv.slideUp();
-                    }, 5000);
+                    submitBtn.prop('disabled', false).val('Enviar Cotización');
+                    setTimeout(function() { messageDiv.slideUp(); }, 6000);
                 }
             });
         });
