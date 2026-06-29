@@ -50,7 +50,12 @@
                             <!-- Mensaje de respuesta -->
                             <div id="contact-message" style="display:none;padding:15px;margin-bottom:20px;border-radius:4px;text-align:left;"></div>
 
-                            <form id="contact-form" action="send-email.php" method="POST">
+                            <div id="contact-form-wrapper" style="position:relative;">
+                            <div id="form-loading" style="display:none;position:absolute;inset:0;background:rgba(255,255,255,0.8);z-index:10;border-radius:4px;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+                                <div style="width:40px;height:40px;border:4px solid #e0e0e0;border-top-color:#1014f5;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+                                <span style="color:#1014f5;font-weight:600;font-size:14px;">Enviando...</span>
+                            </div>
+                            <form id="contact-form" action="index.php" method="POST">
                                 <div class="column one-second">
                                     <input placeholder="Tu nombre *" type="text" name="name" id="name" size="40" required />
                                 </div>
@@ -79,6 +84,7 @@
                                     <input type="submit" value="Enviar Cotización" id="submit-btn" class="button button_size_2 button_theme" style="cursor:pointer;" />
                                 </div>
                             </form>
+                            </div><!-- /#contact-form-wrapper -->
                         </div>
                     </div>
                 </div>
@@ -115,6 +121,9 @@
     </div>
 </section>
 
+<style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 <script>
     jQuery(document).ready(function($) {
         $('#contact-form').on('submit', function(e) {
@@ -123,8 +132,10 @@
             var form = $(this);
             var messageDiv = $('#contact-message');
             var submitBtn = $('#submit-btn');
+            var loading = $('#form-loading');
 
-            submitBtn.prop('disabled', true).val('ENVIANDO...');
+            submitBtn.prop('disabled', true);
+            loading.css('display', 'flex');
 
             $.ajax({
                 type: 'POST',
@@ -152,7 +163,8 @@
                         .slideDown();
                 },
                 complete: function() {
-                    submitBtn.prop('disabled', false).val('Enviar Cotización');
+                    submitBtn.prop('disabled', false);
+                    loading.hide();
                     setTimeout(function() { messageDiv.slideUp(); }, 6000);
                 }
             });

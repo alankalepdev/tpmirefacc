@@ -20,13 +20,6 @@ define('SOCIAL_FACEBOOK', 'https://facebook.com/tpmirefacciones');
 define('SOCIAL_INSTAGRAM', 'https://instagram.com/tpmirefacciones');
 define('SOCIAL_LINKEDIN', 'https://linkedin.com/company/tpmirefacciones');
 
-// Configuración de email (para formulario de contacto)
-define('SMTP_HOST', 'mail.tudominio.com'); // Servidor SMTP de cPanel
-define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'ventas@tpmirefacciones.com'); // Email de cPanel
-define('SMTP_PASSWORD', ''); // Contraseña del email
-define('SMTP_SECURE', 'tls'); // tls o ssl
-
 // Configuración del sitio
 define('SITE_URL', 'https://tudominio.com');
 define('SITE_ROOT', dirname(__FILE__));

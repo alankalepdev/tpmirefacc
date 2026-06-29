@@ -1,0 +1,12 @@
+# Credenciales SMTP - no subir al repositorio
+mail-config.php
+
+# Dependencias de Composer
+vendor/
+composer.lock
+
+# Logs generados
+contact-log.txt
+
+# macOS
+.DS_Store

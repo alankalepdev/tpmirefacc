@@ -1,4 +1,8 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
+    require_once __DIR__ . '/send-email.php';
+    exit;
+}
 require_once 'config.php';
 ?>
 <!DOCTYPE html>
@@ -26,6 +30,8 @@ require_once 'config.php';
     <link rel='stylesheet' href='assets/css/structure.css'>
     <link rel='stylesheet' href='assets/css/industry2.css'>
     <link rel='stylesheet' href='assets/css/custom.css'>
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='assets/plugins/rs-plugin/fonts/font-awesome/css/font-awesome.min.css'>
     <!-- Revolution Slider -->
     <link rel="stylesheet" href="assets/plugins/rs-plugin-6.custom/css/rs6.css">
     
@@ -818,7 +824,7 @@ require_once 'config.php';
        target="_blank" 
        title="Contáctanos por WhatsApp"
        rel="noopener noreferrer">
-        <i class="icon-whatsapp"></i>
+        <i class="fa fa-icon-whatsapp"></i>
     </a>
 
 </body>
