@@ -8,26 +8,26 @@
                 <div class="mcb-wrap-inner">
                     <div class="column mcb-column one-third column_column">
                         <div class="column_attr clearfix align_center" style="padding:100px 10% 85px;border: 1px solid #e0e0e0; margin-left: -1px;">
-                            <i class="icon-phone" style="font-size:40px;color:#1014f5;"></i>
+                            <i class="icon-user" style="font-size:40px;color:#1014f5;"></i>
                             <hr class="no_line" style="margin:0 auto 15px">
-                            <h6>TELÉFONO</h6>
-                            <h4 style="color:#1014f5"><a href="tel:<?php echo CONTACT_PHONE; ?>"><?php echo CONTACT_PHONE; ?></a></h4>
+                            <h6><?php echo CONTACT_NOMBRE_ADOLFO; ?></h6>
+                            <h4 style="color:#1014f5"><?php echo CONTACT_PHONE_ADOLFO; ?></h4>
                         </div>
                     </div>
                     <div class="column mcb-column one-third column_column">
                         <div class="column_attr clearfix align_center" style="padding:100px 7% 85px;border: 1px solid #e0e0e0; margin-left: -1px;">
-                            <i class="icon-location" style="font-size:40px;color:#1014f5;"></i>
+                            <i class="icon-user" style="font-size:40px;color:#1014f5;"></i>
                             <hr class="no_line" style="margin:0 auto 15px">
-                            <h6>DIRECCIÓN</h6>
-                            <h4 style="color:#1014f5"><?php echo CONTACT_ADDRESS; ?></h4>
+                            <h6><?php echo CONTACT_NOMBRE_MONTSERRAT; ?></h6>
+                            <h4 style="color:#1014f5"><?php echo CONTACT_PHONE_MONTSERRAT; ?></h4>
                         </div>
                     </div>
                     <div class="column mcb-column one-third column_column">
                         <div class="column_attr clearfix align_center" style="padding:100px 10% 85px;border: 1px solid #e0e0e0; margin-left: -1px;">
-                            <i class="icon-mail" style="font-size:40px;color:#1014f5;"></i>
+                            <i class="icon-user" style="font-size:40px;color:#1014f5;"></i>
                             <hr class="no_line" style="margin:0 auto 15px">
-                            <h6>EMAIL</h6>
-                            <h4 style="color:#1014f5; word-wrap: break-word"><a href="mailto:<?php echo CONTACT_EMAIL; ?>"><?php echo CONTACT_EMAIL; ?></a></h4>
+                            <h6><?php echo CONTACT_NOMBRE_ZULEMA; ?></h6>
+                            <h4 style="color:#1014f5; word-wrap: break-word"><?php echo CONTACT_PHONE_ZULEMA; ?></h4>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                 <div class="mcb-wrap-inner">
                     <div class="column mcb-column one column_column">
                         <div class="column_attr clearfix align_center">
-                            <a href="https://wa.me/<?php echo CONTACT_WHATSAPP; ?>?text=Hola, necesito una cotización urgente" class="button button_size_3" style="background-color:#25d366;border-color:#25d366" target="_blank">
+                            <a href="https://wa.me/<?php echo CONTACT_WHATSAPP_ADOLFO; ?>?text=Hola, necesito una cotización urgente" class="button button_size_3" style="background-color:#25d366;border-color:#25d366" target="_blank">
                                 <span class="button_label"><i class="icon-whatsapp"></i> CONTACTAR POR WHATSAPP</span>
                             </a>
                         </div>

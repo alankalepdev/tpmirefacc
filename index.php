@@ -9,22 +9,62 @@ require_once 'config.php';
 <html class="no-js" lang="es">
 
 <head>
-       <!-- Basic Page Needs -->
+    <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <title><?php echo SITE_NAME; ?> - <?php echo SITE_TAGLINE; ?></title>
     <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
     <meta name="author" content="<?php echo SITE_NAME; ?>">
     <meta name="keywords" content="refacciones industriales, rodamientos, bandas, cadenas, mangueras, motores eléctricos">
+    <link rel="canonical" href="<?php echo SITE_URL; ?>/">
+
+    <!-- Open Graph / Facebook / AI crawlers -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo SITE_URL; ?>/">
+    <meta property="og:title" content="<?php echo SITE_NAME; ?> - <?php echo SITE_TAGLINE; ?>">
+    <meta property="og:description" content="<?php echo SITE_DESCRIPTION; ?>">
+    <meta property="og:image" content="<?php echo SITE_URL; ?>/assets/images/tpmirefacciones-logo.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="<?php echo SITE_NAME; ?>">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo SITE_NAME; ?> - <?php echo SITE_TAGLINE; ?>">
+    <meta name="twitter:description" content="<?php echo SITE_DESCRIPTION; ?>">
+    <meta name="twitter:image" content="<?php echo SITE_URL; ?>/assets/images/tpmirefacciones-logo.png">
+
+    <!-- Structured data for search engines and AI assistants -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "<?php echo SITE_NAME; ?>",
+        "description": "<?php echo SITE_DESCRIPTION; ?>",
+        "url": "<?php echo SITE_URL; ?>/",
+        "logo": "<?php echo SITE_URL; ?>/assets/images/tpmirefacciones-logo.png",
+        "image": "<?php echo SITE_URL; ?>/assets/images/tpmirefacciones-logo.png",
+        "telephone": "<?php echo CONTACT_PHONE_ADOLFO; ?>",
+        "email": "<?php echo CONTACT_EMAIL_ADOLFO; ?>",
+        "sameAs": [
+            "<?php echo SOCIAL_FACEBOOK; ?>",
+            "<?php echo SOCIAL_INSTAGRAM; ?>",
+            "<?php echo SOCIAL_LINKEDIN; ?>"
+        ]
+    }
+    </script>
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Favicons -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
     <!-- FONTS -->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,400italic,500,600,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Inter:100,200,300,400,400italic,500,600,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=DM+Serif+Display:100,200,300,400,400italic,500,600,700,700italic,900'>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,600,700,700italic,900'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,400italic,500,600,700,700italic,900'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inter:100,200,300,400,400italic,500,600,700,700italic,900'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=DM+Serif+Display:100,200,300,400,400italic,500,600,700,700italic,900'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,400italic,500,600,700,700italic,900'>
     <!-- CSS -->
     <link rel='stylesheet' href='assets/css/global.css'>
     <link rel='stylesheet' href='assets/css/structure.css'>
@@ -34,25 +74,27 @@ require_once 'config.php';
     <link rel='stylesheet' href='assets/plugins/rs-plugin/fonts/font-awesome/css/font-awesome.min.css'>
     <!-- Revolution Slider -->
     <link rel="stylesheet" href="assets/plugins/rs-plugin-6.custom/css/rs6.css">
-    
+
     <!-- Custom Animations CSS -->
     <style>
         /* Smooth Scroll HTML */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Animaciones base */
-        .column, .wrap, .section {
+        .column,
+        .wrap,
+        .section {
             opacity: 1;
             transition: opacity 0.3s ease;
         }
-        
+
         /* Header sticky effect */
         #Header.is-sticky {
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* WhatsApp Float Button */
         .whatsapp-float {
             position: fixed;
@@ -73,36 +115,40 @@ require_once 'config.php';
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: scale(1.1);
             box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.7);
         }
-        
+
         .whatsapp-float i {
-            margin-top: 16px;
+            margin-top: 0px;
         }
-        
+
         /* Transiciones suaves para inputs */
-        input, textarea {
+        input,
+        textarea {
             transition: all 0.3s ease;
         }
-        
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             outline: none;
             border-color: #1014f5 !important;
             box-shadow: 0 0 0 3px rgba(16, 93, 66, 0.1);
         }
-        
+
         /* Hover effects en botones */
-        .button, .action_button {
+        .button,
+        .action_button {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
-        .button::before, .action_button::before {
+
+        .button::before,
+        .action_button::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -114,94 +160,113 @@ require_once 'config.php';
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
-        .button:hover::before, .action_button:hover::before {
+
+        .button:hover::before,
+        .action_button:hover::before {
             width: 300px;
             height: 300px;
         }
-        
+
         /* Parallax container */
         .column_attr.bg-cover {
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
         }
-        
+
         /* Animación de entrada para imágenes */
         .image_frame {
             overflow: hidden;
         }
-        
+
         .image_frame img {
             transition: transform 0.6s ease;
         }
-        
+
         .image_frame:hover img {
             transform: scale(1.1);
         }
-        
+
         /* Menu activo */
         .menu-main li.current-menu-item a {
             color: #1014f5 !important;
             font-weight: 600;
         }
-        
+
         /* Fade in animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
-        
+
         @keyframes slideInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-        
+
         /* Loader para secciones */
         .section {
             animation: fadeIn 0.6s ease-out;
         }
-        
+
         /* Efecto hover en cards de servicios */
         .mcb-column .column_attr {
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        
+
         .mcb-column .column_attr:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Estilo para iconos animados */
-        .icon-cog, .icon-loop, .icon-docs, .icon-clock, .icon-user, .icon-trophy,
-        .icon-tools, .icon-tools-2, .icon-wrench, .icon-flash,
-        .icon-droplet, .icon-link, .icon-graduation, .icon-shuffle,
-        .icon-export, .icon-water, .icon-attach, .icon-gauge,
-        .icon-ccw, .icon-flow-cascade {
+        .icon-cog,
+        .icon-loop,
+        .icon-docs,
+        .icon-clock,
+        .icon-user,
+        .icon-trophy,
+        .icon-tools,
+        .icon-tools-2,
+        .icon-wrench,
+        .icon-flash,
+        .icon-droplet,
+        .icon-link,
+        .icon-graduation,
+        .icon-shuffle,
+        .icon-export,
+        .icon-water,
+        .icon-attach,
+        .icon-gauge,
+        .icon-ccw,
+        .icon-flow-cascade {
             transition: all 0.3s ease;
         }
-        
+
         .column_attr:hover .icon-cog,
         .column_attr:hover .icon-loop,
         .column_attr:hover .icon-docs,
@@ -218,7 +283,7 @@ require_once 'config.php';
             transform: scale(1.2) rotateY(360deg);
             color: #ffd769 !important;
         }
-        
+
         /* Hover especial para iconos amarillos en Servicios Especializados (fondo azul) */
         .column_attr:hover .icon-tools-2[style*="color:#ffd769"],
         .column_attr:hover .icon-wrench[style*="color:#ffd769"],
@@ -227,26 +292,26 @@ require_once 'config.php';
             color: #ffffff !important;
             transform: scale(1.2) rotateY(360deg);
         }
-        
+
         /* Estilos para Catálogo Detallado de Productos */
         .column_attr[style*="border-left:4px solid #ffd769"] {
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        
+
         .column_attr[style*="border-left:4px solid #ffd769"]:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             border-left-width: 6px !important;
         }
-        
+
         .column_attr[style*="border-left:4px solid #ffd769"] i {
             transition: all 0.3s ease;
         }
-        
+
         .column_attr[style*="border-left:4px solid #ffd769"]:hover i {
             transform: scale(1.15) rotate(5deg);
         }
-        
+
         /* Progress bar scroll indicator */
         .scroll-progress {
             position: fixed;
@@ -258,7 +323,7 @@ require_once 'config.php';
             z-index: 9999;
             transition: width 0.1s ease;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .whatsapp-float {
@@ -276,10 +341,10 @@ require_once 'config.php';
 </head>
 
 <body class="home page template-slider style-simple button-custom layout-full-width if-zoom if-border-hide no-content-padding hide-love no-shadows header-split header-fw sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders mobile-tb-center mobile-side-slide mobile-mini-mr-ll tr-menu header-fixed">
-    
+
     <!-- Progress bar scroll indicator -->
     <div class="scroll-progress"></div>
-    
+
     <div id="Wrapper">
         <div id="Header_wrapper">
             <header id="Header">
@@ -298,11 +363,11 @@ require_once 'config.php';
                                             <li> <a href="#services"><span>SERVICIOS</span></a> </li>
                                         </ul>
                                         <ul id="menu-main-menu-right" class="menu menu-main menu_right">
-                                            <li> <a href="#press"><span>NOTICIAS</span></a> </li>
+                                            <!-- <li> <a href="#press"><span>NOTICIAS</span></a> </li> -->
                                             <li> <a href="#contact"><span>CONTACTO</span></a> </li>
-                                            
+
                                         </ul>
-                                    </nav><a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a>
+                                    </nav><a class="responsive-menu-toggle" href="#Header"><i class="icon-menu-fine"></i></a>
                                 </div>
                             </div>
                             <!-- <div class="top_bar_right">
@@ -319,13 +384,13 @@ require_once 'config.php';
                                 <rs-slide data-key="rs-1" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;"> <img src="assets/images/industry2-slider-bg.jpg" class="rev-slidebg">
                                     <rs-layer id="slider-1-slide-1-layer-0" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:261px,261px,163px,163px;" data-text="w:normal;s:60,60,50,50;l:70,70,60,60;a:left,left,center,center;" data-dim="w:600px,600px,550px,550px;" data-frame_0="x:50,50,31,31;" data-frame_1="st:100;sp:800;sR:100;" data-frame_999="o:0;st:w;sR:8100;" style="z-index:8;font-family:DM Serif Display;"> Refacciones de alta calidad aun excelente precio. </rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-1" data-type="image" data-rsp_ch="on" data-xy="x:r;xo:-80px,-80px,-50px,-50px;yo:250px,250px,156px,156px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:500px,500px,313px,313px;h:329px,329px,205px,205px;" data-vbility="t,t,f,t" data-frame_0="sX:0.9;sY:0.9;" data-frame_1="e:power2.inOut;st:200;sp:800;sR:200;" data-frame_999="o:0;st:w;sR:8000;" style="z-index:13;"><img src="assets/images/industry2-slider-pic1.jpg" width="780" height="513"> </rs-layer>
-                                    <rs-layer id="slider-1-slide-1-layer-2" data-type="shape" data-rsp_ch="on" data-xy="x:r;xo:180px,180px,112px,112px;yo:380px,380px,237px,237px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:80px,80px,50px,50px;h:80,80,50,50;" data-vbility="t,t,f,t" data-border="bor:90px,90px,90px,90px;" data-frame_0="sX:0.8;sY:0.8;" data-frame_1="e:power4.out;st:350;sp:800;sR:350;" data-frame_999="o:0;st:w;sR:7850;" style="z-index:14;background-color:#1014f5;"></rs-layer><a id="slider-1-slide-1-layer-3" class="rs-layer prettyphoto" href="https://www.youtube.com/watch?v=z0jjTU-H43M" target="_self" data-type="text" data-rsp_ch="on" data-xy="x:r;xo:70px,70px,43px,43px;yo:405px,405px,253px,253px;" data-text="w:normal;s:20,20,12,12;l:30,30,18,18;" data-vbility="t,t,f,t" data-frame_0="sX:0.9;sY:0.9;" data-frame_1="st:400;sp:800;sR:400;" data-frame_999="o:0;st:w;sR:7800;" style="z-index:15;font-family:DM Serif Display;">Como trabajamos? <i style="color:#ffd769;" class="material-icons"></i> </a>
+                                    <rs-layer id="slider-1-slide-1-layer-2" data-type="shape" data-rsp_ch="on" data-xy="x:r;xo:180px,180px,112px,112px;yo:380px,380px,237px,237px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:80px,80px,50px,50px;h:80,80,50,50;" data-vbility="t,t,f,t" data-border="bor:90px,90px,90px,90px;" data-frame_0="sX:0.8;sY:0.8;" data-frame_1="e:power4.out;st:350;sp:800;sR:350;" data-frame_999="o:0;st:w;sR:7850;" style="z-index:14;background-color:#1014f5;"></rs-layer><a id="slider-1-slide-1-layer-3" class="rs-layer prettyphoto" href="#about" target="_self" data-type="text" data-rsp_ch="on" data-xy="x:r;xo:70px,70px,43px,43px;yo:405px,405px,253px,253px;" data-text="w:normal;s:20,20,12,12;l:30,30,18,18;" data-vbility="t,t,f,t" data-frame_0="sX:0.9;sY:0.9;" data-frame_1="st:400;sp:800;sR:400;" data-frame_999="o:0;st:w;sR:7800;" style="z-index:15;font-family:DM Serif Display;">Como trabajamos? <i style="color:#ffd769;" class="material-icons"></i> </a>
                                     <rs-layer id="slider-1-slide-1-layer-5" data-type="object" data-rsp_ch="on" data-xy="xo:50px,50px,31px,31px;yo:50px,50px,31px,31px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:16;font-family:Roboto;"></rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-6" data-type="object" data-rsp_ch="on" data-xy="xo:50px,50px,31px,31px;yo:50px,50px,31px,31px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:17;font-family:Roboto;"></rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-7" data-type="object" data-rsp_ch="on" data-xy="xo:50px,50px,31px,31px;yo:50px,50px,31px,31px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:18;font-family:Roboto;"></rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-9" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,-160px,-160px;yo:535px,535px,417px,417px;" data-text="w:normal;l:30;" data-frame_0="x:50,50,31,31;" data-frame_1="st:150;sp:800;sR:150;" data-frame_999="o:0;st:w;sR:8050;" style="z-index:9;font-family:DM Serif Display;"> SIEMENS. </rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-10" data-type="text" data-color="#ffd769" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:380px,380px,160px,160px;yo:535px,535px,417px,417px;" data-text="w:normal;l:30;" data-frame_0="x:50,50,31,31;" data-frame_1="st:250;sp:800;sR:250;" data-frame_999="o:0;st:w;sR:7950;" style="z-index:11;font-family:DM Serif Display;"> Marathon. </rs-layer>
-                                    <rs-layer id="slider-1-slide-1-layer-11" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:210px,210px,0,210px;yo:535px,535px,417px,417px;" data-text="w:normal;l:30;" data-frame_0="x:50,50,31,31;" data-frame_1="st:200;sp:800;sR:200;" data-frame_999="o:0;st:w;sR:8000;" style="z-index:10;font-family:DM Serif Display;"> Falk SKF WEG. </rs-layer><a id="slider-1-slide-1-layer-12" class="rs-layer rev-btn" href="assets/about.html" target="_self" data-type="button" data-color="#363636" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:643px,643px,532px,532px;" data-text="w:normal;s:12,12,14,14;l:55;ls:1px,1px,0px,0px;fw:700;" data-dim="minh:0px,0px,none,0px;" data-padding="r:40;l:40;" data-frame_0="x:50,50,31,31;" data-frame_1="st:300;sp:800;sR:300;" data-frame_999="o:0;st:w;sR:7900;" data-frame_hover="c:#363636;bgc:#fece4d;bor:0px,0px,0px,0px;bri:100%;" style="z-index:12;background-color:#ffd769;font-family:Inter;">Productos </a> </rs-slide>
+                                    <rs-layer id="slider-1-slide-1-layer-11" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:210px,210px,0,210px;yo:535px,535px,417px,417px;" data-text="w:normal;l:30;" data-frame_0="x:50,50,31,31;" data-frame_1="st:200;sp:800;sR:200;" data-frame_999="o:0;st:w;sR:8000;" style="z-index:10;font-family:DM Serif Display;"> Falk SKF WEG. </rs-layer><a id="slider-1-slide-1-layer-12" class="rs-layer rev-btn" href="#services" target="_self" data-type="button" data-color="#363636" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:643px,643px,532px,532px;" data-text="w:normal;s:12,12,14,14;l:55;ls:1px,1px,0px,0px;fw:700;" data-dim="minh:0px,0px,none,0px;" data-padding="r:40;l:40;" data-frame_0="x:50,50,31,31;" data-frame_1="st:300;sp:800;sR:300;" data-frame_999="o:0;st:w;sR:7900;" data-frame_hover="c:#363636;bgc:#fece4d;bor:0px,0px,0px,0px;bri:100%;" style="z-index:12;background-color:#ffd769;font-family:Inter;">Productos </a> </rs-slide>
                             </rs-slides>
                         </rs-module>
                     </rs-module-wrap>
@@ -369,15 +434,15 @@ require_once 'config.php';
     <!-- JS -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery-migrate-3.4.0.min.js"></script>
-    
+
     <!-- GSAP & ScrollTrigger -->
     <script src="assets/js/gsap.min.js"></script>
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.js"></script>
-    
+
     <!-- WOW.js for animations -->
     <script src="assets/js/wow.js"></script>
-    
+
     <!-- Theme Scripts -->
     <script src="assets/js/mfn.menu.js"></script>
     <script src="assets/js/jquery.plugins.js"></script>
@@ -385,11 +450,11 @@ require_once 'config.php';
     <script src="assets/js/animations/animations.js"></script>
     <script src="assets/js/translate3d.js"></script>
     <script src="assets/js/scripts.js"></script>
-    
+
     <!-- Revolution Slider -->
     <script src="assets/plugins/rs-plugin-6.custom/js/revolution.tools.min.js"></script>
     <script src="assets/plugins/rs-plugin-6.custom/js/rs6.min.js"></script>
-    
+
     <!-- Smooth Scroll -->
     <script src="assets/js/SmoothScroll.js"></script>
     <!-- Revolution Slider Init -->
@@ -439,16 +504,16 @@ require_once 'config.php';
             revinit_revslider11();
         }
     </script>
-    
+
     <!-- GSAP ScrollTrigger & Smooth Scroll Animations -->
     <script>
         // Esperar a que jQuery y el DOM estén listos
         jQuery(document).ready(function($) {
-            
+
             console.log('%c🔧 jQuery Loaded:', 'color: #10b981; font-weight: bold;', typeof jQuery !== 'undefined' ? 'YES' : 'NO');
             console.log('%c🔧 GSAP Loaded:', 'color: #10b981; font-weight: bold;', typeof gsap !== 'undefined' ? 'YES' : 'NO');
             console.log('%c🔧 ScrollTrigger Loaded:', 'color: #10b981; font-weight: bold;', typeof ScrollTrigger !== 'undefined' ? 'YES' : 'NO');
-            
+
             // Registrar ScrollTrigger con GSAP
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
@@ -457,7 +522,7 @@ require_once 'config.php';
                 console.error('❌ GSAP or ScrollTrigger not loaded!');
                 return; // Salir si no están cargados
             }
-            
+
             // ========================================
             // 1. SMOOTH SCROLL CONFIG
             // ========================================
@@ -473,7 +538,7 @@ require_once 'config.php';
                     fixedBackground: false
                 });
             }
-            
+
             // ========================================
             // 2. MENU SMOOTH SCROLL
             // ========================================
@@ -496,61 +561,61 @@ require_once 'config.php';
                     }, 1000, 'swing');
                 }
             });
-            
+
             // ========================================
             // 3. ACTIVE MENU ON SCROLL
             // ========================================
             const sections = document.querySelectorAll('section[id]');
             const menuLinks = document.querySelectorAll('.menu-main a[href^="#"]');
-            
+
             window.addEventListener('scroll', function() {
                 let current = '';
                 const scrollPos = window.scrollY + 200;
-                
+
                 // Determinar sección actual
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop - 300;
                     const sectionBottom = sectionTop + section.offsetHeight;
                     const sectionId = section.getAttribute('id');
-                    
+
                     if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
                         current = sectionId;
                     }
                 });
-                
+
                 // Si estamos muy arriba (antes de las secciones), activar Header/Inicio
                 if (window.scrollY < 300) {
                     current = 'Header';
                 }
-                
+
                 // Actualizar clases del menú
                 menuLinks.forEach(link => {
                     const href = link.getAttribute('href');
                     const li = link.parentElement;
-                    
+
                     // Remover todas las clases activas
                     li.classList.remove('current-menu-item');
                     li.classList.remove('current_page_item');
-                    
+
                     // Agregar clase activa si coincide
-                    if (href === '#' + current || 
+                    if (href === '#' + current ||
                         (current === 'Header' && href === '#Header') ||
                         (current === 'Header' && href === '#' && window.scrollY < 300)) {
                         li.classList.add('current-menu-item');
                         li.classList.add('current_page_item');
                     }
                 });
-                
+
                 // Scroll progress bar
                 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolled = (winScroll / height) * 100;
                 const progressBar = document.querySelector('.scroll-progress');
-                if(progressBar) {
+                if (progressBar) {
                     progressBar.style.width = scrolled + "%";
                 }
             });
-            
+
             // ========================================
             // 4. FADE IN ANIMATIONS
             // ========================================
@@ -567,7 +632,7 @@ require_once 'config.php';
                 },
                 once: true
             });
-            
+
             // ========================================
             // 5. COUNTER ANIMATIONS (Números/Estadísticas)
             // ========================================
@@ -585,7 +650,9 @@ require_once 'config.php';
                         textContent: 0,
                         duration: 0.6,
                         ease: "power1.out",
-                        snap: { textContent: 1 },
+                        snap: {
+                            textContent: 1
+                        },
                         onUpdate: function() {
                             // Mantener el formato original con símbolos
                             const value = Math.ceil(this.targets()[0].textContent);
@@ -600,7 +667,7 @@ require_once 'config.php';
                     });
                 }
             });
-            
+
             // ========================================
             // 6. PARALLAX EFFECT ON IMAGES
             // ========================================
@@ -616,7 +683,7 @@ require_once 'config.php';
                     ease: "none"
                 });
             });
-            
+
             // ========================================
             // 7. SCALE UP ON SCROLL (Productos/Servicios) - EXCLUYE FOOTER Y CONTACTO
             // ========================================
@@ -626,7 +693,7 @@ require_once 'config.php';
                 if (section && (section.id === 'contact' || section.id === 'footer')) {
                     return;
                 }
-                
+
                 gsap.from(element, {
                     scrollTrigger: {
                         trigger: element,
@@ -640,7 +707,7 @@ require_once 'config.php';
                     ease: "back.out(1.2)"
                 });
             });
-            
+
             // ========================================
             // 8. STAGGER ANIMATION (Servicios en grid) - OPTIMIZADO
             // ========================================
@@ -649,7 +716,7 @@ require_once 'config.php';
                 if (section.id === 'contact' || section.id === 'footer') {
                     return;
                 }
-                
+
                 const items = section.querySelectorAll('.wrap');
                 if (items.length > 1) {
                     gsap.from(items, {
@@ -666,7 +733,7 @@ require_once 'config.php';
                     });
                 }
             });
-            
+
             // ========================================
             // 9. HEADER SHRINK ON SCROLL
             // ========================================
@@ -678,7 +745,7 @@ require_once 'config.php';
                     className: "is-sticky"
                 }
             });
-            
+
             // ========================================
             // 10. BUTTON HOVER ANIMATION
             // ========================================
@@ -690,7 +757,7 @@ require_once 'config.php';
                         ease: "power2.out"
                     });
                 });
-                
+
                 button.addEventListener('mouseleave', function() {
                     gsap.to(this, {
                         scale: 1,
@@ -699,7 +766,7 @@ require_once 'config.php';
                     });
                 });
             });
-            
+
             // ========================================
             // 11. WHATSAPP BUTTON PULSE
             // ========================================
@@ -710,7 +777,7 @@ require_once 'config.php';
                 repeat: -1,
                 yoyo: true
             });
-            
+
             // ========================================
             // 12. TEXT REVEAL ANIMATION - OPTIMIZADO
             // ========================================
@@ -720,7 +787,7 @@ require_once 'config.php';
                 if (section && (section.id === 'contact' || section.id === 'Footer' || section.tagName === 'FOOTER')) {
                     return;
                 }
-                
+
                 gsap.from(heading, {
                     scrollTrigger: {
                         trigger: heading,
@@ -733,7 +800,7 @@ require_once 'config.php';
                     ease: "power2.out"
                 });
             });
-            
+
             // ========================================
             // 13. FORMULARIO FOCUS ANIMATIONS
             // ========================================
@@ -745,7 +812,7 @@ require_once 'config.php';
                         duration: 0.3
                     });
                 });
-                
+
                 field.addEventListener('blur', function() {
                     gsap.to(this, {
                         scale: 1,
@@ -753,7 +820,7 @@ require_once 'config.php';
                     });
                 });
             });
-            
+
             // ========================================
             // 14. REVEAL ON SCROLL (Fade + Slide)
             // ========================================
@@ -771,13 +838,13 @@ require_once 'config.php';
                     ease: "elastic.out(1, 0.5)"
                 });
             });
-            
+
             // ========================================
             // 15. ANIMACIÓN RÁPIDA PARA FOOTER Y CONTACTO
             // ========================================
             const footerSection = document.querySelector('#Footer, footer');
             const contactSection = document.querySelector('#contact');
-            
+
             if (contactSection) {
                 gsap.from(contactSection.querySelectorAll('.column_attr'), {
                     scrollTrigger: {
@@ -792,7 +859,7 @@ require_once 'config.php';
                     ease: "power1.out"
                 });
             }
-            
+
             if (footerSection) {
                 gsap.from(footerSection.querySelectorAll('.column'), {
                     scrollTrigger: {
@@ -807,23 +874,23 @@ require_once 'config.php';
                     ease: "power1.out"
                 });
             }
-            
+
             // ========================================
             // 16. CONSOLE INFO
             // ========================================
             console.log('%c✨ GSAP ScrollTrigger Animations Loaded!', 'color: #10b981; font-size: 16px; font-weight: bold;');
             console.log('%c🎯 Smooth Scroll Enabled', 'color: #3b82f6; font-size: 14px;');
             console.log('%c🚀 All animations ready!', 'color: #8b5cf6; font-size: 14px;');
-            
+
         });
     </script>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5215512345678?text=Hola,%20me%20gustaría%20más%20información" 
-       class="whatsapp-float" 
-       target="_blank" 
-       title="Contáctanos por WhatsApp"
-       rel="noopener noreferrer">
+    <a href="https://wa.me/5214441250450?text=Hola,%20me%20gustaría%20más%20información"
+        class="whatsapp-float"
+        target="_blank"
+        title="Contáctanos por WhatsApp"
+        rel="noopener noreferrer">
         <i class="fa fa-icon-whatsapp"></i>
     </a>
 

@@ -9,12 +9,21 @@ define('SITE_NAME', 'TPMI Refacciones');
 define('SITE_TAGLINE', 'Líder en Refacciones Industriales');
 define('SITE_DESCRIPTION', 'Empresa líder en importación y distribución de refacciones industriales de alta calidad');
 
-// Información de contacto
-define('CONTACT_EMAIL', 'ventas@tpmirefacciones.com');
-define('CONTACT_PHONE', '+52 1 722 245 7593');
-define('CONTACT_WHATSAPP', '5217222457593');
-define('CONTACT_ADDRESS', 'Dirección de tu empresa aquí');
-
+// Información de contacto adolfo victoria
+define('CONTACT_EMAIL_ADOLFO', 'adolfo@tpmirefacciones.com');
+define('CONTACT_PHONE_ADOLFO', '+52 1 444 125 0450');
+define('CONTACT_WHATSAPP_ADOLFO', '5214441250450'); // Formato internacional sin espacios ni guiones
+define('CONTACT_NOMBRE_ADOLFO', 'Adolfo Victor');
+// Información de contacto Montserrat Alcocer
+define('CONTACT_EMAIL_MONTSERRAT', 'montserrat@tpmirefacciones.com');
+define('CONTACT_PHONE_MONTSERRAT', '+52 1 444 313 6167');
+define('CONTACT_WHATSAPP_MONTSERRAT', '5214443136167'); // Formato internacional sin espacios ni guiones
+define('CONTACT_NOMBRE_MONTSERRAT', 'Montserrat Alcocer');
+// Información de contacto Zulema Ibarra
+define('CONTACT_EMAIL_ZULEMA', 'zulema@tpmirefacciones.com');
+define('CONTACT_PHONE_ZULEMA', '+52 1 444 704 1154');
+define('CONTACT_WHATSAPP_ZULEMA', '5214447041154'); // Formato internacional sin espacios ni guiones
+define('CONTACT_NOMBRE_ZULEMA', 'Zulema Ibarra');
 // Redes sociales
 define('SOCIAL_FACEBOOK', 'https://facebook.com/tpmirefacciones');
 define('SOCIAL_INSTAGRAM', 'https://instagram.com/tpmirefacciones');

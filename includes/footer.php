@@ -35,7 +35,7 @@
 					<?php endif; ?>
 					
 					<li class="whatsapp">
-						<a href="https://wa.me/<?php echo CONTACT_WHATSAPP; ?>" title="WhatsApp" target="_blank">
+						<a href="https://wa.me/<?php echo CONTACT_WHATSAPP_ADOLFO; ?>" title="WhatsApp" target="_blank">
 							<i class="icon-whatsapp"></i>
 						</a>
 					</li>

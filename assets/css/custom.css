@@ -15,3 +15,12 @@
         height: auto !important;
     }
 }
+
+/* El tema fuerza background:#fff !important en .header-fixed #Top_bar
+   (ver structure.css), lo que tapa el color de marca. Lo sobreescribimos
+   aquí porque custom.css carga después en el <head>. */
+@media only screen and (min-width: 768px) {
+    .header-fixed #Top_bar {
+        background: #b5a248 !important;
+    }
+}

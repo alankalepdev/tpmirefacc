@@ -7,7 +7,7 @@
 			<div class="wrap mcb-wrap one valign-middle move-up clearfix" style="margin-top:-150px">
 				<div class="mcb-wrap-inner">
 					<div class="column mcb-column one-second column_column">
-						<div class="column_attr clearfix bg-cover" style="background-image:url('assets/images/industry2-home-pic1.jpg');background-repeat:no-repeat;background-position:center bottom;">
+						<div class="column_attr clearfix bg-cover" style="background-image:url('assets/images/industry2-home-pic1.png');background-repeat:no-repeat;background-position:center bottom;">
 							<hr class="no_line" style="margin:0 auto 340px">
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 				<div class="mcb-wrap-inner">
 					<div class="column mcb-column one column_column column-margin-30px">
 						<div class="column_attr clearfix align_center">
-							<h2 style="color:#1014f5;">500+</h2>
+							<h2 style="color:#1014f5;">150+</h2>
 							<h5>Clientes satisfechos en toda la región</h5>
 						</div>
 					</div>
