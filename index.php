@@ -36,7 +36,7 @@ require_once 'config.php';
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "<?php echo SITE_NAME; ?>",
         "description": "<?php echo SITE_DESCRIPTION; ?>",
         "url": "<?php echo SITE_URL; ?>/",
@@ -44,13 +44,66 @@ require_once 'config.php';
         "image": "<?php echo SITE_URL; ?>/assets/images/tpmirefacciones-logo.png",
         "telephone": "<?php echo CONTACT_PHONE_ADOLFO; ?>",
         "email": "<?php echo CONTACT_EMAIL_ADOLFO; ?>",
+        "priceRange": "$$",
+        "currenciesAccepted": "MXN",
+        "paymentAccepted": "Efectivo, Transferencia, Tarjeta",
+        "areaServed": {
+            "@type": "Country",
+            "name": "México"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MX",
+            "addressRegion": "San Luis Potosí"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "<?php echo CONTACT_PHONE_ADOLFO; ?>",
+                "contactType": "sales",
+                "name": "<?php echo CONTACT_NOMBRE_ADOLFO; ?>",
+                "availableLanguage": "Spanish"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "<?php echo CONTACT_PHONE_MONTSERRAT; ?>",
+                "contactType": "sales",
+                "name": "<?php echo CONTACT_NOMBRE_MONTSERRAT; ?>",
+                "availableLanguage": "Spanish"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "<?php echo CONTACT_PHONE_ZULEMA; ?>",
+                "contactType": "sales",
+                "name": "<?php echo CONTACT_NOMBRE_ZULEMA; ?>",
+                "availableLanguage": "Spanish"
+            }
+        ],
         "sameAs": [
             "<?php echo SOCIAL_FACEBOOK; ?>",
             "<?php echo SOCIAL_INSTAGRAM; ?>",
             "<?php echo SOCIAL_LINKEDIN; ?>"
-        ]
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Refacciones Industriales",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Rodamientos industriales"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Bandas de transmisión"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Cadenas industriales"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Mangueras industriales"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Motores eléctricos"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Chumaceras y soportes"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Sellos y retenes"}}
+            ]
+        }
     }
     </script>
+
+    <!-- llms.txt reference for AI crawlers -->
+    <link rel="alternate" type="text/plain" href="<?php echo SITE_URL; ?>/llms.txt" title="AI-readable site description">
+    <!-- Sitemap reference -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="<?php echo SITE_URL; ?>/sitemap.xml">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -382,7 +435,7 @@ require_once 'config.php';
                         <rs-module id="rev_slider_1_1" data-version="6.3.3">
                             <rs-slides>
                                 <rs-slide data-key="rs-1" data-title="Slide" data-anim="ei:d;eo:d;s:1000;r:0;t:fade;sl:0;"> <img src="assets/images/industry2-slider-bg.jpg" class="rev-slidebg">
-                                    <rs-layer id="slider-1-slide-1-layer-0" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:261px,261px,163px,163px;" data-text="w:normal;s:60,60,50,50;l:70,70,60,60;a:left,left,center,center;" data-dim="w:600px,600px,550px,550px;" data-frame_0="x:50,50,31,31;" data-frame_1="st:100;sp:800;sR:100;" data-frame_999="o:0;st:w;sR:8100;" style="z-index:8;font-family:DM Serif Display;"> Refacciones de alta calidad aun excelente precio. </rs-layer>
+                                    <rs-layer id="slider-1-slide-1-layer-0" data-type="text" data-rsp_ch="on" data-xy="x:l,l,c,c;xo:80px,80px,0,80px;yo:261px,261px,163px,163px;" data-text="w:normal;s:60,60,50,50;l:70,70,60,60;a:left,left,center,center;" data-dim="w:600px,600px,550px,550px;" data-frame_0="x:50,50,31,31;" data-frame_1="st:100;sp:800;sR:100;" data-frame_999="o:0;st:w;sR:8100;" style="z-index:8;font-family:DM Serif Display;"> Refacciones de alta calidad a un excelente precio. </rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-1" data-type="image" data-rsp_ch="on" data-xy="x:r;xo:-80px,-80px,-50px,-50px;yo:250px,250px,156px,156px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:500px,500px,313px,313px;h:329px,329px,205px,205px;" data-vbility="t,t,f,t" data-frame_0="sX:0.9;sY:0.9;" data-frame_1="e:power2.inOut;st:200;sp:800;sR:200;" data-frame_999="o:0;st:w;sR:8000;" style="z-index:13;"><img src="assets/images/industry2-slider-pic1.jpg" width="780" height="513"> </rs-layer>
                                     <rs-layer id="slider-1-slide-1-layer-2" data-type="shape" data-rsp_ch="on" data-xy="x:r;xo:180px,180px,112px,112px;yo:380px,380px,237px,237px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-dim="w:80px,80px,50px,50px;h:80,80,50,50;" data-vbility="t,t,f,t" data-border="bor:90px,90px,90px,90px;" data-frame_0="sX:0.8;sY:0.8;" data-frame_1="e:power4.out;st:350;sp:800;sR:350;" data-frame_999="o:0;st:w;sR:7850;" style="z-index:14;background-color:#1014f5;"></rs-layer><a id="slider-1-slide-1-layer-3" class="rs-layer prettyphoto" href="#about" target="_self" data-type="text" data-rsp_ch="on" data-xy="x:r;xo:70px,70px,43px,43px;yo:405px,405px,253px,253px;" data-text="w:normal;s:20,20,12,12;l:30,30,18,18;" data-vbility="t,t,f,t" data-frame_0="sX:0.9;sY:0.9;" data-frame_1="st:400;sp:800;sR:400;" data-frame_999="o:0;st:w;sR:7800;" style="z-index:15;font-family:DM Serif Display;">Como trabajamos? <i style="color:#ffd769;" class="material-icons"></i> </a>
                                     <rs-layer id="slider-1-slide-1-layer-5" data-type="object" data-rsp_ch="on" data-xy="xo:50px,50px,31px,31px;yo:50px,50px,31px,31px;" data-text="w:normal;s:20,20,12,12;l:0,0,15,15;" data-frame_999="o:0;st:w;sR:8700;" style="z-index:16;font-family:Roboto;"></rs-layer>

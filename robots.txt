@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+Disallow: /send-email.php
+Disallow: /test-server.php
+Disallow: /vendor/
+Disallow: /mail-config.php
+
+# Sitemap
+Sitemap: https://tpmirefacciones.com/sitemap.xml
+
+# AI Crawlers - permitir indexación
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

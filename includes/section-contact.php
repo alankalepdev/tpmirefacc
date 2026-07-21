@@ -12,6 +12,7 @@
                             <hr class="no_line" style="margin:0 auto 15px">
                             <h6><?php echo CONTACT_NOMBRE_ADOLFO; ?></h6>
                             <h4 style="color:#1014f5"><?php echo CONTACT_PHONE_ADOLFO; ?></h4>
+                            <p><?php echo CONTACT_EMAIL_ADOLFO; ?></p>
                         </div>
                     </div>
                     <div class="column mcb-column one-third column_column">
@@ -20,6 +21,7 @@
                             <hr class="no_line" style="margin:0 auto 15px">
                             <h6><?php echo CONTACT_NOMBRE_MONTSERRAT; ?></h6>
                             <h4 style="color:#1014f5"><?php echo CONTACT_PHONE_MONTSERRAT; ?></h4>
+                            <p><?php echo CONTACT_EMAIL_MONTSERRAT; ?></p>
                         </div>
                     </div>
                     <div class="column mcb-column one-third column_column">
@@ -28,6 +30,7 @@
                             <hr class="no_line" style="margin:0 auto 15px">
                             <h6><?php echo CONTACT_NOMBRE_ZULEMA; ?></h6>
                             <h4 style="color:#1014f5; word-wrap: break-word"><?php echo CONTACT_PHONE_ZULEMA; ?></h4>
+                            <p><?php echo CONTACT_EMAIL_ZULEMA; ?></p>
                         </div>
                     </div>
                 </div>

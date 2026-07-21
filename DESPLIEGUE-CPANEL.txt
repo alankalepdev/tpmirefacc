@@ -9,6 +9,9 @@
 config.php
 index.php
 send-email.php
+robots.txt        ← SEO: permite indexación a Google e IAs
+sitemap.xml       ← SEO: mapa del sitio para buscadores
+llms.txt          ← SEO: descripción legible para IAs (ChatGPT, Claude, Perplexity)
 test-server.php (temporal - eliminar después)
 includes/
   ├── footer.php
